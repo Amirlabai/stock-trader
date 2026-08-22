@@ -12,7 +12,7 @@ export function PortfolioPanel({ portfolio }: Props) {
     .slice(0, 10)
 
   return (
-    <section className="panel portfolio">
+    <section className="panel">
       <div className="panel-head">
         <div>
           <p className="eyebrow">Paper portfolio</p>
@@ -25,7 +25,7 @@ export function PortfolioPanel({ portfolio }: Props) {
         </div>
       </div>
 
-      <div className="stat-row stat-row-wide">
+      <div className="stat-row">
         <div>
           <span className="stat-label">Cash invested</span>
           <strong>{usd(s.cashInvested)}</strong>

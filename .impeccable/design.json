@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-22T19:45:00Z",
+  "title": "Design System: Halal Dual-Strategy Screener",
+  "extensions": {
+    "colorMeta": {
+      "antique-brass": {
+        "role": "primary",
+        "displayName": "Antique Brass",
+        "canonical": "#c4a35a",
+        "tonalRamp": ["#2a210c", "#4a3a18", "#6e5628", "#96753c", "#c4a35a", "#d4bc82", "#e5d4ab", "#f4ead4"]
+      },
+      "ink-on-gold": {
+        "role": "primary",
+        "displayName": "Ink on Gold",
+        "canonical": "#1a1408",
+        "tonalRamp": ["#0d0a04", "#1a1408", "#2e2410", "#4a3a1c", "#6e5628", "#9c7c3c", "#c4a35a", "#e5d4ab"]
+      },
+      "pine-vault": {
+        "role": "neutral",
+        "displayName": "Pine Vault",
+        "canonical": "#0f1a17",
+        "tonalRamp": ["#050807", "#0a1210", "#0f1a17", "#1c322b", "#2f4d43", "#4a6b5f", "#7a988c", "#c5d4ce"]
+      },
+      "forest-chamber": {
+        "role": "neutral",
+        "displayName": "Forest Chamber",
+        "canonical": "#15241f",
+        "tonalRamp": ["#050807", "#0f1a17", "#15241f", "#1c322b", "#2f4d43", "#4a6b5f", "#7a988c", "#c5d4ce"]
+      },
+      "moss-panel": {
+        "role": "neutral",
+        "displayName": "Moss Panel",
+        "canonical": "#1c322b",
+        "tonalRamp": ["#0a1210", "#15241f", "#1c322b", "#2a453c", "#3d5e53", "#5a7a6e", "#8aa398", "#c5d4ce"]
+      },
+      "mint-ledger": {
+        "role": "neutral",
+        "displayName": "Mint Ledger",
+        "canonical": "#e8f0ec",
+        "tonalRamp": ["#1c322b", "#3d5e53", "#5a7a6e", "#8aa398", "#b7c9c1", "#d2ddd8", "#e8f0ec", "#f4f8f6"]
+      },
+      "sage-caption": {
+        "role": "neutral",
+        "displayName": "Sage Caption",
+        "canonical": "#9bb0a6",
+        "tonalRamp": ["#1c322b", "#2f4d43", "#4a6b5f", "#6d887c", "#9bb0a6", "#b7c9c1", "#d2ddd8", "#e8f0ec"]
+      },
+      "hairline-frost": {
+        "role": "neutral",
+        "displayName": "Hairline Frost",
+        "canonical": "rgba(232, 240, 236, 0.12)",
+        "tonalRamp": ["rgba(232, 240, 236, 0.06)", "rgba(232, 240, 236, 0.12)", "rgba(232, 240, 236, 0.18)", "rgba(232, 240, 236, 0.28)", "rgba(232, 240, 236, 0.4)", "rgba(232, 240, 236, 0.55)", "rgba(232, 240, 236, 0.72)", "rgba(232, 240, 236, 0.9)"]
+      },
+      "compliant-mint": {
+        "role": "neutral",
+        "displayName": "Compliant Mint",
+        "canonical": "#6fbf9a",
+        "tonalRamp": ["#143328", "#1e4d3c", "#2d6e56", "#4a9474", "#6fbf9a", "#97d4b6", "#c3e8d4", "#e6f6ee"]
+      },
+      "dusty-coral": {
+        "role": "neutral",
+        "displayName": "Dusty Coral",
+        "canonical": "#e08a7a",
+        "tonalRamp": ["#3a1c18", "#5c2e26", "#854338", "#b35c4e", "#e08a7a", "#ebb0a5", "#f3d0c9", "#faece9"]
+      },
+      "veil": {
+        "role": "neutral",
+        "displayName": "Pine Veil",
+        "canonical": "rgba(6, 10, 9, 0.62)",
+        "tonalRamp": ["rgba(6, 10, 9, 0.2)", "rgba(6, 10, 9, 0.35)", "rgba(6, 10, 9, 0.5)", "rgba(6, 10, 9, 0.62)", "rgba(6, 10, 9, 0.74)", "rgba(6, 10, 9, 0.84)", "rgba(6, 10, 9, 0.92)", "rgba(6, 10, 9, 0.97)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Brand wordmark only, in Antique Brass." },
+      "headline": { "displayName": "Headline", "purpose": "Page title. Cap the measure at about 18ch." },
+      "title": { "displayName": "Title", "purpose": "Panel headings and numeric figures." },
+      "body": { "displayName": "Body", "purpose": "Lede and footer. Lede measure about 52ch." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows, column headers, stat labels." }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "instant",
+        "value": "0s",
+        "purpose": "State changes are immediate color shifts. No authored easing or lift."
+      }
+    ],
+    "breakpoints": [
+      { "name": "header-split", "value": "800px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Close and other secondary actions. Hairline stroke, sage label.",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\">Close</button>",
+      "css": ".ds-btn-ghost { border: 1px solid rgba(232, 240, 236, 0.12); border-radius: 2px; background: transparent; color: #9bb0a6; padding: 0.55rem 0.9rem; font-family: \"Source Sans 3\", \"Segoe UI\", sans-serif; font-size: 1rem; cursor: pointer; } .ds-btn-ghost:hover { color: #e8f0ec; } .ds-btn-ghost:focus-visible { outline: 2px solid #c4a35a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ticker Button",
+      "kind": "button",
+      "refersTo": "button-ticker",
+      "description": "Opens the compliance audit. Strong ticker over a sage company name.",
+      "html": "<button class=\"ds-btn-ticker\" type=\"button\"><strong>AAPL</strong><span>Apple Inc.</span></button>",
+      "css": ".ds-btn-ticker { display: grid; gap: 0.15rem; padding: 0; border: 0; background: none; color: #e8f0ec; text-align: left; cursor: pointer; font-family: \"Source Sans 3\", \"Segoe UI\", sans-serif; font-size: 0.92rem; } .ds-btn-ticker strong { font-weight: 600; } .ds-btn-ticker span { color: #9bb0a6; font-size: 0.8rem; } .ds-btn-ticker:hover strong { color: #c4a35a; } .ds-btn-ticker:focus-visible { outline: 2px solid #c4a35a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Square chamber for a track or the paper ledger.",
+      "html": "<section class=\"ds-panel\"><header class=\"ds-panel-head\"><p class=\"ds-eyebrow\">Track A</p><h2>Halal Dividend Daily Picks</h2><p class=\"ds-lede\">Top five by composite score after AAOIFI-style screens.</p></header></section>",
+      "css": ".ds-panel { padding: 1.25rem 1.25rem 1.5rem; border: 1px solid rgba(232, 240, 236, 0.12); background: linear-gradient(180deg, rgba(28, 50, 43, 0.55), rgba(15, 26, 23, 0.35)); color: #e8f0ec; font-family: \"Source Sans 3\", \"Segoe UI\", sans-serif; } .ds-panel-head { margin-bottom: 1rem; } .ds-panel h2 { margin: 0; font-family: Fraunces, \"Palatino Linotype\", Palatino, serif; font-size: 1.35rem; font-weight: 550; letter-spacing: -0.02em; } .ds-eyebrow { margin: 0 0 0.35rem; color: #c4a35a; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem; font-weight: 600; } .ds-lede { margin: 0.65rem 0 0; color: #9bb0a6; max-width: 52ch; line-height: 1.5; }"
+    },
+    {
+      "name": "Eyebrow",
+      "kind": "custom",
+      "refersTo": "eyebrow",
+      "description": "Uppercase brass citation above a panel or drawer title.",
+      "html": "<p class=\"ds-eyebrow\">Paper portfolio</p>",
+      "css": ".ds-eyebrow { margin: 0 0 0.35rem; color: #c4a35a; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem; font-weight: 600; font-family: \"Source Sans 3\", \"Segoe UI\", sans-serif; }"
+    },
+    {
+      "name": "Stat Tile",
+      "kind": "custom",
+      "refersTo": "stat-value",
+      "description": "Ledger figure with uppercase sage label. Positive mint, negative coral.",
+      "html": "<div class=\"ds-stat\"><span class=\"ds-stat-label\">Current value</span><strong>12,400.00 USD</strong></div>",
+      "css": ".ds-stat { padding: 0.75rem 0.85rem; border-top: 1px solid rgba(232, 240, 236, 0.12); color: #e8f0ec; font-family: \"Source Sans 3\", \"Segoe UI\", sans-serif; } .ds-stat-label { display: block; color: #9bb0a6; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; } .ds-stat strong { font-family: Fraunces, \"Palatino Linotype\", Palatino, serif; font-size: 1.2rem; font-weight: 550; } .ds-stat .ds-pos { color: #6fbf9a; } .ds-stat .ds-neg { color: #e08a7a; }"
+    },
+    {
+      "name": "Data Table",
+      "kind": "custom",
+      "refersTo": "panel",
+      "description": "Full-width ledger table. Uppercase sage headers, hairline rows.",
+      "html": "<div class=\"ds-table-wrap\"><table class=\"ds-table\"><thead><tr><th>Ticker</th><th>Yield</th><th>Score</th></tr></thead><tbody><tr><td><strong>AAPL</strong></td><td>0.5%</td><td>81</td></tr></tbody></table></div>",
+      "css": ".ds-table-wrap { overflow-x: auto; } .ds-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; font-family: \"Source Sans 3\", \"Segoe UI\", sans-serif; color: #e8f0ec; } .ds-table th, .ds-table td { text-align: left; padding: 0.7rem 0.55rem; border-bottom: 1px solid rgba(232, 240, 236, 0.12); vertical-align: top; } .ds-table th { color: #9bb0a6; font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }"
+    },
+    {
+      "name": "Audit Drawer",
+      "kind": "custom",
+      "refersTo": "drawer",
+      "description": "Right sheet for AAOIFI ratios. Veil click or Escape closes it.",
+      "html": "<aside class=\"ds-drawer\"><header class=\"ds-drawer-header\"><div><p class=\"ds-eyebrow\">Compliance audit</p><h2>AAPL <span>Apple Inc.</span></h2></div><button class=\"ds-btn-ghost\" type=\"button\">Close</button></header><p class=\"ds-meta\">Technology · US · market cap basis: trailing 24m</p><table class=\"ds-metrics\"><tbody><tr><th>Debt / market cap</th><td>12.40%</td></tr><tr><th>Purification estimate per share</th><td>0.0120 USD</td></tr></tbody></table><p class=\"ds-hint\">AAOIFI-style screens use a 33% limit on debt, cash, and receivables versus trailing market cap when available.</p></aside>",
+      "css": ".ds-drawer { width: min(420px, 100%); background: #15241f; border-left: 1px solid rgba(232, 240, 236, 0.12); padding: 1.25rem 1.25rem 2rem; color: #e8f0ec; font-family: \"Source Sans 3\", \"Segoe UI\", sans-serif; } .ds-drawer-header { display: flex; justify-content: space-between; gap: 1rem; align-items: start; } .ds-drawer h2 { margin: 0; font-family: Fraunces, \"Palatino Linotype\", Palatino, serif; font-weight: 550; letter-spacing: -0.02em; } .ds-drawer h2 span { color: #9bb0a6; font-family: \"Source Sans 3\", \"Segoe UI\", sans-serif; font-weight: 400; } .ds-eyebrow { margin: 0 0 0.35rem; color: #c4a35a; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem; font-weight: 600; } .ds-btn-ghost { border: 1px solid rgba(232, 240, 236, 0.12); border-radius: 2px; background: transparent; color: #9bb0a6; padding: 0.55rem 0.9rem; cursor: pointer; font: inherit; } .ds-btn-ghost:hover { color: #e8f0ec; } .ds-meta { color: #9bb0a6; font-size: 0.9rem; } .ds-metrics { width: 100%; border-collapse: collapse; margin: 1rem 0; } .ds-metrics th, .ds-metrics td { text-align: left; padding: 0.7rem 0.55rem; border-bottom: 1px solid rgba(232, 240, 236, 0.12); } .ds-metrics th { width: 65%; color: #9bb0a6; font-weight: 500; font-size: 0.9rem; } .ds-metrics td { font-variant-numeric: tabular-nums; } .ds-hint { color: #9bb0a6; font-size: 0.85rem; line-height: 1.45; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Ledger",
+    "overview": "A formal after-hours document. Type and hairlines do the work; gold is a citation, not decoration. The dashboard is a view-only daily brief: two strategy tracks and a shared paper ledger, read in low ambient light after the close.\n\nThe world is restrained institutional. Density is high enough to scan five names and a handful of ratios without scrolling past the point. Surfaces are square chambers of dark pine with a frost hairline. Fraunces carries the brand and the figures; Source Sans 3 carries the table and the legal line. Confirmed visual rejections: chrome, drop shadows, rounded marketing cards, emoji, and a second accent hue.",
+    "keyCharacteristics": [
+      "Dark pine interiors with one antique-brass voice",
+      "Hairline frost borders instead of shadows",
+      "Square panels; 2px radius only on buttons",
+      "Serif for brand and numbers; sans for tables and body",
+      "Immediate color-shift states. No choreographed motion"
+    ],
+    "rules": [
+      { "name": "The One Brass Rule", "body": "Antique brass appears on the brand wordmark, uppercase eyebrows, and hover citations. It does not fill panels, tables, or backgrounds.", "section": "colors" },
+      { "name": "The Hairline Recipe Rule", "body": "Borders and rules use Hairline Frost. Do not invent a second border color or a thicker rule to create hierarchy.", "section": "colors" },
+      { "name": "The Two-Hands Rule", "body": "Fraunces is for brand, headings, and figures. Source Sans 3 is for tables, captions, and prose. Do not reverse them.", "section": "typography" },
+      { "name": "The Small-Caps Citation Rule", "body": "Uppercase labels are citations, not decoration. Keep them sage or brass. Never mint-on-mint at display size.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces stay flat at rest and in hover. Hover is a color citation (brass or mint), never a lift.", "section": "elevation" },
+      { "name": "The Square Chamber Rule", "body": "Do not round panels, tables, or the drawer. The 2px button radius is the exception, not a scale.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Antique Brass rare: wordmark, eyebrows, ticker hover, links.",
+      "Do divide space with Hairline Frost, not shadows or extra fill colors.",
+      "Do set figures in Fraunces and table copy in Source Sans 3.",
+      "Do keep panels square and the column at 1120px.",
+      "Do write empty, loading, and error states as sage or dusty-coral sentences."
+    ],
+    "donts": [
+      "Don't introduce a second accent, gradient text, or glass blur.",
+      "Don't round chambers or add drop shadows.",
+      "Don't use emoji, decorative icons, or monospace as a costume for \"finance.\"",
+      "Don't add per-visitor controls, primary filled buttons, or form fields to the public page.",
+      "Don't use em dashes or emoji in product copy."
+    ]
+  }
+}

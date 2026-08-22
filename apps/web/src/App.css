@@ -201,80 +201,24 @@ th {
   color: var(--muted);
 }
 
-.primary,
-.small,
 .ghost {
+  border: 1px solid var(--line);
   border-radius: 2px;
-  cursor: pointer;
-}
-
-.primary {
-  border: 0;
-  background: var(--accent);
-  color: var(--accent-ink);
-  padding: 0.55rem 0.9rem;
-  font-weight: 600;
-}
-
-.primary:hover {
-  filter: brightness(1.05);
-}
-
-.small {
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--ink);
-  padding: 0.3rem 0.55rem;
-  font-size: 0.8rem;
-}
-
-.small:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.ghost {
-  border: 1px solid var(--line);
   background: transparent;
   color: var(--muted);
   padding: 0.55rem 0.9rem;
+  cursor: pointer;
 }
 
 .ghost:hover {
   color: var(--ink);
 }
 
-.portfolio-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  align-items: end;
-}
-
-.portfolio-controls label {
-  display: grid;
-  gap: 0.3rem;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.portfolio-controls input {
-  width: 7rem;
-  padding: 0.45rem 0.55rem;
-  border: 1px solid var(--line);
-  background: var(--bg0);
-  color: var(--ink);
-}
-
 .stat-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
   gap: 0.75rem;
   margin: 0.75rem 0 1rem;
-}
-
-.stat-row-wide {
-  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
 }
 
 .stat-row > div {
@@ -377,12 +321,4 @@ th {
   color: var(--muted);
   font-size: 0.85rem;
   line-height: 1.45;
-}
-
-.auto-note {
-  margin: 0 0 0.75rem;
-}
-
-.drawer-actions {
-  margin-top: 1.25rem;
 }

@@ -11,7 +11,10 @@
 ## Completed
 - `pipeline/portfolio_ledger.py` maintains `apps/web/public/data/paper-portfolio.json`
 - Dashboard shows cash invested, current value, P&L, per-ticker DCA, dividend DRIP log
+- Visual system documented in `DESIGN.md` and `.impeccable/design.json` (Quiet Ledger)
+- Unused CSS and leftover Vite assets removed; look unchanged
 
 ## Next
 - Enable GitHub Pages and push to `main` for the first live deploy
 - Expand `pipeline/universe/*.csv` over time
+- Optional: `/impeccable init` to capture PRODUCT.md (not required for the current dashboard)

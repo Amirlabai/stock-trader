@@ -16,6 +16,11 @@ Static daily dashboard for Shariah-compliant (AAOIFI-style) equity picks, split 
 - Daily output: top 5 dividend + top 5 growth.
 - Paper buy size: USD 100 per pick lot; DCA = total cost basis / shares; cash invested excludes DRIP cash.
 
+## Visual system
+- Captured in root `DESIGN.md` (tokens in YAML frontmatter) and `.impeccable/design.json`.
+- North star: The Quiet Ledger. Dark pine interiors, antique-brass citations, Fraunces + Source Sans 3, square hairline chambers, no shadows.
+- CSS tokens live in `apps/web/src/App.css` (`--bg0` through `--danger`, `--font-display`, `--font-body`).
+
 ## Conventions
 - Product copy: formal plain language; no em dashes; no emoji.
 - Public UI is view-only (no per-visitor actions).
