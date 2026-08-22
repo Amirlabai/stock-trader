@@ -10,6 +10,7 @@ Static daily dashboard for Shariah-compliant (AAOIFI-style) equity picks, split 
 - **CI:** Screen runs on schedule/`workflow_dispatch` only; push builds from committed data.
 
 ## Key parameters
+- Full screen parameter reference: `pipeline/SCREEN_PARAMETERS.md`.
 - Debt / Cash / Receivables screens: each under 33% of trailing market cap (24-month average when available).
 - Dividend track: yield about 2.5–7.5%, payout 25–70%, multi-year dividend growth, interest coverage above 3.5x.
 - Growth track: revenue/EPS growth and ROIC thresholds; price above 200-day SMA.
@@ -20,6 +21,8 @@ Static daily dashboard for Shariah-compliant (AAOIFI-style) equity picks, split 
 - Captured in root `DESIGN.md` (tokens in YAML frontmatter) and `.impeccable/design.json`.
 - North star: The Quiet Ledger. Dark pine interiors, antique-brass citations, Fraunces + Source Sans 3, square hairline chambers, no shadows.
 - CSS tokens live in `apps/web/src/App.css` (`--bg0` through `--danger`, `--font-display`, `--font-body`).
+- Mobile (under 720px): data rows reflow to labeled ledger cards; audit drawer is full-width; tap targets ≥44px.
+- Methodology panel (collapsed at bottom) parses `pipeline/SCREEN_PARAMETERS.md` (synced to `apps/web/src/content/screen-parameters.md` by Vite).
 
 ## Conventions
 - Product copy: formal plain language; no em dashes; no emoji.

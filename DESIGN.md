@@ -154,11 +154,13 @@ A forest vault with a single metal. Brass is rare. Mint ink and sage captions do
 
 ## Layout
 
-A single centered column: `min(1120px, calc(100% - 2rem))`, top padding 2.5rem, bottom 4rem. Vertical rhythm is 1.5rem between panels, 2.5rem around header and footer.
+A single centered column: `min(1120px, calc(100% - 2rem))`, top padding 2.5rem, bottom 4rem. Vertical rhythm is 1.5rem between panels, 2.5rem around header and footer. Respect notch and home-indicator insets via `env(safe-area-inset-*)`.
 
-The header becomes two columns at 800px (1.6fr brand block, 1fr as-of meta, aligned to the bottom). Main stacks three square chambers: Dividend, Growth, Paper portfolio. Tables scroll horizontally inside the chamber rather than breaking the column.
+The header becomes two columns at 800px (1.6fr brand block, 1fr as-of meta, aligned to the bottom). Main stacks three square chambers: Dividend, Growth, Paper portfolio.
 
-Stat tiles sit in an auto-fit grid (`minmax(9.5rem, 1fr)`). Cell padding is 0.7rem by 0.55rem. Group spacing is tight; section spacing is generous.
+Below 720px, wide data tables reflow into labeled ledger cards (one pick or position per chamber). Stat tiles use a two-column grid, collapsing to one column under 380px. The audit drawer becomes a full-width sheet. Touch targets for tickers and Close are at least 44px.
+
+Above 720px, tables stay tabular and may scroll horizontally inside the chamber rather than breaking the column. Stat tiles sit in an auto-fit grid (`minmax(9.5rem, 1fr)`). Cell padding is 0.7rem by 0.55rem. Group spacing is tight; section spacing is generous.
 
 ## Elevation & Depth
 
@@ -194,7 +196,8 @@ Live primitives only. Unused filled and small-button leftovers were removed from
 - **Header:** Eyebrow, title, lede. Meta can sit opposite on wide viewports
 
 ### Tables
-- Collapse, full width, 0.92rem body. Headers are uppercase sage labels. Rows divide with Hairline Frost. Numeric audit cells use tabular nums. Empty states are a single sage sentence, not an illustration.
+- Desktop: collapse, full width, 0.92rem body. Headers are uppercase sage labels. Rows divide with Hairline Frost. Numeric audit cells use tabular nums.
+- Mobile (below 720px): each row becomes a labeled ledger card via `data-label`; the ticker cell leads without a duplicate label. Empty states are a single sage sentence, not an illustration.
 
 ### Stat tiles
 - No box. A top hairline and padding. Uppercase sage label over a Fraunces figure. Positive figures take Compliant Mint; negative take Dusty Coral.

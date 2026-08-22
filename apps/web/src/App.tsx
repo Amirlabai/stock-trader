@@ -5,6 +5,7 @@ import { AuditDrawer } from './components/AuditDrawer'
 import { DividendTable } from './components/DividendTable'
 import { GrowthTable } from './components/GrowthTable'
 import { PortfolioPanel } from './components/PortfolioPanel'
+import { ScreenMethodPanel } from './components/ScreenMethodPanel'
 import './App.css'
 
 type AuditTarget =
@@ -106,6 +107,8 @@ function App() {
         </section>
 
         {portfolio && <PortfolioPanel portfolio={portfolio} />}
+
+        <ScreenMethodPanel />
       </main>
 
       <footer className="site-footer">

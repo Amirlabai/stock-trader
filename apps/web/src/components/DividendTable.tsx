@@ -13,7 +13,7 @@ export function DividendTable({ picks, onSelect }: Props) {
 
   return (
     <div className="table-wrap">
-      <table>
+      <table className="data-table">
         <thead>
           <tr>
             <th>Ticker</th>
@@ -28,18 +28,18 @@ export function DividendTable({ picks, onSelect }: Props) {
         <tbody>
           {picks.map((p) => (
             <tr key={p.ticker}>
-              <td>
+              <td data-label="Ticker">
                 <button type="button" className="linkish" onClick={() => onSelect(p)}>
                   <strong>{p.ticker}</strong>
                   <span className="sub">{p.name}</span>
                 </button>
               </td>
-              <td>{p.sector}</td>
-              <td>{pct(p.yield)}</td>
-              <td>{pct(p.divCagr5y)}</td>
-              <td>{pct(p.fcfPayout)}</td>
-              <td>{score(p.score)}</td>
-              <td>{usd(p.purificationPerShare, 4)}</td>
+              <td data-label="Sector">{p.sector}</td>
+              <td data-label="Yield">{pct(p.yield)}</td>
+              <td data-label="5Y Div CAGR">{pct(p.divCagr5y)}</td>
+              <td data-label="FCF payout">{pct(p.fcfPayout)}</td>
+              <td data-label="Score">{score(p.score)}</td>
+              <td data-label="Purification / sh">{usd(p.purificationPerShare, 4)}</td>
             </tr>
           ))}
         </tbody>

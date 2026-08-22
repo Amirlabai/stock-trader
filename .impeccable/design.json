@@ -87,6 +87,8 @@
       }
     ],
     "breakpoints": [
+      { "name": "stat-stack", "value": "380px" },
+      { "name": "ledger-cards", "value": "720px" },
       { "name": "header-split", "value": "800px" }
     ]
   },

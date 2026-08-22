@@ -13,6 +13,9 @@
 - Dashboard shows cash invested, current value, P&L, per-ticker DCA, dividend DRIP log
 - Visual system documented in `DESIGN.md` and `.impeccable/design.json` (Quiet Ledger)
 - Unused CSS and leftover Vite assets removed; look unchanged
+- `pipeline/SCREEN_PARAMETERS.md` documents Tier 1/2 and strategy thresholds
+- Mobile fit: stacked ledger cards under 720px, 44px tap targets, safe-area insets, full-width audit drawer
+- Methodology panel on the dashboard parses `SCREEN_PARAMETERS.md` for users
 
 ## Next
 - Enable GitHub Pages and push to `main` for the first live deploy

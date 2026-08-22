@@ -13,7 +13,7 @@ export function GrowthTable({ picks, onSelect }: Props) {
 
   return (
     <div className="table-wrap">
-      <table>
+      <table className="data-table">
         <thead>
           <tr>
             <th>Ticker</th>
@@ -28,18 +28,18 @@ export function GrowthTable({ picks, onSelect }: Props) {
         <tbody>
           {picks.map((p) => (
             <tr key={p.ticker}>
-              <td>
+              <td data-label="Ticker">
                 <button type="button" className="linkish" onClick={() => onSelect(p)}>
                   <strong>{p.ticker}</strong>
                   <span className="sub">{p.name}</span>
                 </button>
               </td>
-              <td>{p.sector}</td>
-              <td>{usd(p.price)}</td>
-              <td>{pct(p.revGrowthTtm)}</td>
-              <td>{pct(p.fwdEpsGrowth)}</td>
-              <td>{pct(p.debtToMc, 2)}</td>
-              <td>{score(p.score)}</td>
+              <td data-label="Sector">{p.sector}</td>
+              <td data-label="Price">{usd(p.price)}</td>
+              <td data-label="TTM rev growth">{pct(p.revGrowthTtm)}</td>
+              <td data-label="Forward EPS growth">{pct(p.fwdEpsGrowth)}</td>
+              <td data-label="Debt / MC">{pct(p.debtToMc, 2)}</td>
+              <td data-label="Score">{score(p.score)}</td>
             </tr>
           ))}
         </tbody>

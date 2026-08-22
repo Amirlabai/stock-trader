@@ -54,7 +54,7 @@ export function PortfolioPanel({ portfolio }: Props) {
         <p className="empty">No positions in the ledger yet.</p>
       ) : (
         <div className="table-wrap">
-          <table>
+          <table className="data-table">
             <thead>
               <tr>
                 <th>Ticker</th>
@@ -69,16 +69,16 @@ export function PortfolioPanel({ portfolio }: Props) {
             <tbody>
               {portfolio.positions.map((p) => (
                 <tr key={p.ticker}>
-                  <td>
+                  <td data-label="Ticker">
                     <strong>{p.ticker}</strong>
                     <span className="sub">{p.name}</span>
                   </td>
-                  <td>{num(p.shares, 4)}</td>
-                  <td>{usd(p.dca)}</td>
-                  <td>{usd(p.currentPrice)}</td>
-                  <td>{usd(p.marketValue)}</td>
-                  <td>{usd(p.cashInvested)}</td>
-                  <td>{usd(p.dividendsReceived, 4)}</td>
+                  <td data-label="Shares">{num(p.shares, 4)}</td>
+                  <td data-label="DCA">{usd(p.dca)}</td>
+                  <td data-label="Price">{usd(p.currentPrice)}</td>
+                  <td data-label="Market value">{usd(p.marketValue)}</td>
+                  <td data-label="Cash in">{usd(p.cashInvested)}</td>
+                  <td data-label="Dividends">{usd(p.dividendsReceived, 4)}</td>
                 </tr>
               ))}
             </tbody>
@@ -92,7 +92,7 @@ export function PortfolioPanel({ portfolio }: Props) {
           <p className="empty">No dividend payouts recorded yet.</p>
         ) : (
           <div className="table-wrap">
-            <table>
+            <table className="data-table">
               <thead>
                 <tr>
                   <th>Date</th>
@@ -106,12 +106,12 @@ export function PortfolioPanel({ portfolio }: Props) {
               <tbody>
                 {events.map((e) => (
                   <tr key={`${e.asOf}-${e.ticker}-${e.amountPerShare}`}>
-                    <td>{e.asOf}</td>
-                    <td>{e.ticker}</td>
-                    <td>{usd(e.amountPerShare, 4)}</td>
-                    <td>{usd(e.cash, 4)}</td>
-                    <td>{usd(e.reinvestPrice)}</td>
-                    <td>{num(e.sharesBought, 6)}</td>
+                    <td data-label="Date">{e.asOf}</td>
+                    <td data-label="Ticker">{e.ticker}</td>
+                    <td data-label="$ / share">{usd(e.amountPerShare, 4)}</td>
+                    <td data-label="Cash">{usd(e.cash, 4)}</td>
+                    <td data-label="Reinvest price">{usd(e.reinvestPrice)}</td>
+                    <td data-label="Shares bought">{num(e.sharesBought, 6)}</td>
                   </tr>
                 ))}
               </tbody>
