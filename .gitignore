@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+apps/web/node_modules/
+apps/web/dist/
+
+# Python
+pipeline/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Env / OS
+.env
+.env.*
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

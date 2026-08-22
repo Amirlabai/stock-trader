@@ -1,0 +1,165 @@
+ticker,region,name
+AAPL,US,Apple Inc
+MSFT,US,Microsoft Corporation
+GOOGL,US,Alphabet Inc
+AMZN,US,Amazon.com Inc
+NVDA,US,NVIDIA Corporation
+META,US,Meta Platforms Inc
+AVGO,US,Broadcom Inc
+JNJ,US,Johnson & Johnson
+PG,US,Procter & Gamble
+KO,US,Coca-Cola Company
+PEP,US,PepsiCo Inc
+COST,US,Costco Wholesale
+HD,US,Home Depot
+MRK,US,Merck & Co
+ABBV,US,AbbVie Inc
+LLY,US,Eli Lilly
+TMO,US,Thermo Fisher Scientific
+NEE,US,NextEra Energy
+LIN,US,Linde plc
+TXN,US,Texas Instruments
+QCOM,US,Qualcomm Inc
+AMD,US,Advanced Micro Devices
+CRM,US,Salesforce Inc
+ADBE,US,Adobe Inc
+ORCL,US,Oracle Corporation
+CSCO,US,Cisco Systems
+IBM,US,IBM
+AMAT,US,Applied Materials
+ASML,US,ASML Holding ADR
+TSM,US,Taiwan Semiconductor ADR
+NVO,US,Novo Nordisk ADR
+UL,US,Unilever ADR
+CAT,US,Caterpillar Inc
+DE,US,Deere & Company
+HON,US,Honeywell International
+MCD,US,McDonald's Corporation
+NKE,US,Nike Inc
+WMT,US,Walmart Inc
+LOW,US,Lowe's Companies
+MDT,US,Medtronic plc
+SYK,US,Stryker Corporation
+ISRG,US,Intuitive Surgical
+AMGN,US,Amgen Inc
+GILD,US,Gilead Sciences
+PLD,US,Prologis Inc
+AMT,US,American Tower
+ADP,US,Automatic Data Processing
+INTU,US,Intuit Inc
+NOW,US,ServiceNow Inc
+PANW,US,Palo Alto Networks
+UNP,US,Union Pacific
+WM,US,Waste Management
+CTAS,US,Cintas Corporation
+ROST,US,Ross Stores
+TJX,US,TJX Companies
+CL,US,Colgate-Palmolive
+KMB,US,Kimberly-Clark
+MDLZ,US,Mondelez International
+SHW,US,Sherwin-Williams
+APD,US,Air Products
+EMR,US,Emerson Electric
+ETN,US,Eaton Corporation
+ITW,US,Illinois Tool Works
+CMI,US,Cummins Inc
+TM,US,Toyota Motor ADR
+SONY,US,Sony Group ADR
+INFY,US,Infosys ADR
+MELI,US,MercadoLibre
+AZN,US,AstraZeneca ADR
+NVS,US,Novartis ADR
+SNY,US,Sanofi ADR
+ADI,US,Analog Devices
+ANET,US,Arista Networks
+CDNS,US,Cadence Design Systems
+SNPS,US,Synopsys Inc
+KLAC,US,KLA Corporation
+LRCX,US,Lam Research
+FAST,US,Fastenal Company
+ODFL,US,Old Dominion Freight
+CPRT,US,Copart Inc
+ORLY,US,O'Reilly Automotive
+AZO,US,AutoZone Inc
+IDXX,US,IDEXX Laboratories
+DXCM,US,DexCom Inc
+ZTS,US,Zoetis Inc
+ABT,US,Abbott Laboratories
+DHR,US,Danaher Corporation
+GEHC,US,GE HealthCare
+VRTX,US,Vertex Pharmaceuticals
+REGN,US,Regeneron Pharmaceuticals
+BIIB,US,Biogen Inc
+ACN,US,Accenture plc
+FTNT,US,Fortinet Inc
+ADSK,US,Autodesk Inc
+VEEV,US,Veeva Systems
+EW,US,Edwards Lifesciences
+BSX,US,Boston Scientific
+RMD,US,ResMed Inc
+A,US,Agilent Technologies
+IQV,US,IQVIA Holdings
+SHEL,UK,Shell plc
+BP.L,UK,BP plc
+AZN.L,UK,AstraZeneca plc
+ULVR.L,UK,Unilever plc
+GSK.L,UK,GSK plc
+DGE.L,UK,Diageo plc
+RIO.L,UK,Rio Tinto plc
+BATS.L,UK,British American Tobacco
+LLOY.L,UK,Lloyds Banking Group
+HSBA.L,UK,HSBC Holdings
+SAP.DE,EU,SAP SE
+SIE.DE,EU,Siemens AG
+ALV.DE,EU,Allianz SE
+DTE.DE,EU,Deutsche Telekom
+AIR.PA,EU,Airbus SE
+MC.PA,EU,LVMH
+OR.PA,EU,L'Oreal
+SAN.PA,EU,Sanofi
+ASML.AS,EU,ASML Holding
+PHIA.AS,EU,Philips
+NESN.SW,EU,Nestle SA
+ROG.SW,EU,Roche Holding
+NOVN.SW,EU,Novartis AG
+7203.T,APAC,Toyota Motor
+6758.T,APAC,Sony Group
+9984.T,APAC,SoftBank Group
+005930.KS,APAC,Samsung Electronics
+000660.KS,APAC,SK Hynix
+2330.TW,APAC,Taiwan Semiconductor
+2317.TW,APAC,Hon Hai Precision
+BHP.AX,APAC,BHP Group
+CBA.AX,APAC,Commonwealth Bank
+WOW.AX,APAC,Woolworths Group
+RELIANCE.NS,APAC,Reliance Industries
+TCS.NS,APAC,Tata Consultancy
+INFY.NS,APAC,Infosys Ltd
+JPM,US,JPMorgan Chase
+BAC,US,Bank of America
+WFC,US,Wells Fargo
+GS,US,Goldman Sachs
+V,US,Visa Inc
+MA,US,Mastercard Inc
+AXP,US,American Express
+BLK,US,BlackRock Inc
+MET,US,MetLife Inc
+PGR,US,Progressive Corporation
+PM,US,Philip Morris International
+MO,US,Altria Group
+BTI,US,British American Tobacco ADR
+LMT,US,Lockheed Martin
+RTX,US,RTX Corporation
+NOC,US,Northrop Grumman
+BA,US,Boeing Company
+MGM,US,MGM Resorts
+WYNN,US,Wynn Resorts
+DKNG,US,DraftKings Inc
+BUD,US,Anheuser-Busch InBev ADR
+DEO,US,Diageo ADR
+STZ,US,Constellation Brands
+PYPL,US,PayPal Holdings
+COIN,US,Coinbase Global
+SCHW,US,Charles Schwab
+XOM,US,Exxon Mobil
+CVX,US,Chevron Corporation
