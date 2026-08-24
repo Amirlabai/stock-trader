@@ -8,20 +8,20 @@
       "sector": "Consumer Cyclical",
       "region": "EU",
       "currency": "EUR",
-      "price": 535.9351468861104,
+      "price": 535.9976814210415,
       "priceLocal": 459.35,
       "yield": 0.0287,
       "divCagr5y": 0.16737752579810006,
-      "fcfPayout": 0.4511473390355509,
+      "fcfPayout": 0.4511473390355508,
       "score": 81.5,
-      "purificationPerShare": 0.5893205421384561,
+      "purificationPerShare": 0.5893893058428746,
       "ratios": {
-        "debtToMarketCap": 0.13838109072288868,
-        "cashToMarketCap": 0.050867699952096126,
-        "receivablesToMarketCap": 0.01632046187175829,
+        "debtToMarketCap": 0.13828805245308196,
+        "cashToMarketCap": 0.05083349988351835,
+        "receivablesToMarketCap": 0.016309489075351912,
         "mcBasis": "trailing_24m",
-        "interestIncomeNonOp": 290514534.83104706,
-        "purificationPerShare": 0.5893205421384561
+        "interestIncomeNonOp": 290548432.94620514,
+        "purificationPerShare": 0.5893893058428746
       }
     },
     {
@@ -38,9 +38,9 @@
       "score": 78.6,
       "purificationPerShare": 0.22505974864427034,
       "ratios": {
-        "debtToMarketCap": 0.16237290349317912,
-        "cashToMarketCap": 0.040602014188054106,
-        "receivablesToMarketCap": 0.02794684093463464,
+        "debtToMarketCap": 0.16237290405102733,
+        "cashToMarketCap": 0.04060201432754634,
+        "receivablesToMarketCap": 0.027946841030648782,
         "mcBasis": "trailing_24m",
         "interestIncomeNonOp": 93000000.0,
         "purificationPerShare": 0.22505974864427034
@@ -52,20 +52,20 @@
       "sector": "Healthcare",
       "region": "EU",
       "currency": "CHF",
-      "price": 157.9544206428528,
+      "price": 157.98591190338135,
       "priceLocal": 126.76,
       "yield": 0.028999999999999998,
       "divCagr5y": 0.039289877625411807,
-      "fcfPayout": 0.46133855339805835,
+      "fcfPayout": 0.46133855339805824,
       "score": 68.8,
-      "purificationPerShare": 0.24453522114247286,
+      "purificationPerShare": 0.24458397395563294,
       "ratios": {
-        "debtToMarketCap": 0.1830117655393734,
-        "cashToMarketCap": 0.05966402905827661,
-        "receivablesToMarketCap": 0.05656520365240583,
+        "debtToMarketCap": 0.1831025558840158,
+        "cashToMarketCap": 0.05969362779880015,
+        "receivablesToMarketCap": 0.05659326509599245,
         "mcBasis": "trailing_24m",
-        "interestIncomeNonOp": 464791723.72817993,
-        "purificationPerShare": 0.24453522114247286
+        "interestIncomeNonOp": 464884388.923645,
+        "purificationPerShare": 0.24458397395563294
       }
     },
     {
@@ -74,20 +74,20 @@
       "sector": "Healthcare",
       "region": "EU",
       "currency": "EUR",
-      "price": 91.3312360906601,
+      "price": 91.34189289569855,
       "priceLocal": 78.28,
       "yield": 0.052199999999999996,
       "divCagr5y": 0.05204428664335836,
       "fcfPayout": 0.684420823932335,
       "score": 67.3,
-      "purificationPerShare": 0.3223404408308866,
+      "purificationPerShare": 0.32237805248907697,
       "ratios": {
-        "debtToMarketCap": 0.20694533834731627,
-        "cashToMarketCap": 0.08619244329709906,
-        "receivablesToMarketCap": 0.11244617085859882,
+        "debtToMarketCap": 0.20687766379929212,
+        "cashToMarketCap": 0.08616425694272253,
+        "receivablesToMarketCap": 0.11240939910113537,
         "mcBasis": "trailing_24m",
-        "interestIncomeNonOp": 386185988.0685806,
-        "purificationPerShare": 0.3223404408308866
+        "interestIncomeNonOp": 386231049.4184494,
+        "purificationPerShare": 0.32237805248907697
       }
     },
     {
@@ -96,20 +96,20 @@
       "sector": "Consumer Defensive",
       "region": "US",
       "currency": "USD",
-      "price": 146.59,
-      "priceLocal": 146.59,
+      "price": 146.6,
+      "priceLocal": 146.6,
       "yield": 0.0301,
       "divCagr5y": 0.052786848176509915,
-      "fcfPayout": 0.6687400511190335,
+      "fcfPayout": 0.6675436595365419,
       "score": 66.8,
-      "purificationPerShare": 0.18466039196208905,
+      "purificationPerShare": 0.1849913458036946,
       "ratios": {
-        "debtToMarketCap": 0.09847427738906313,
-        "cashToMarketCap": 0.027951557865644537,
-        "receivablesToMarketCap": 0.017026215493295447,
+        "debtToMarketCap": 0.0986507529659391,
+        "cashToMarketCap": 0.028001649802642796,
+        "receivablesToMarketCap": 0.017056728143714017,
         "mcBasis": "trailing_24m",
         "interestIncomeNonOp": 430000000.0,
-        "purificationPerShare": 0.18466039196208905
+        "purificationPerShare": 0.1849913458036946
       }
     }
   ],
@@ -120,20 +120,20 @@
       "sector": "Healthcare",
       "region": "US",
       "currency": "USD",
-      "price": 1247.92,
-      "priceLocal": 1247.92,
+      "price": 1246.93,
+      "priceLocal": 1246.93,
       "revGrowthTtm": 0.477,
       "fwdEpsGrowth": 0.5876957983193278,
-      "debtToMc": 0.0529339967577335,
+      "debtToMc": 0.052911298527413615,
       "score": 100.0,
-      "purificationPerShare": 0.1965542282429769,
+      "purificationPerShare": 0.19646951327053216,
       "ratios": {
-        "debtToMarketCap": 0.0529339967577335,
-        "cashToMarketCap": 0.00924448794516397,
-        "receivablesToMarketCap": 0.025101397657862238,
+        "debtToMarketCap": 0.052911298527413615,
+        "cashToMarketCap": 0.009240523885591271,
+        "receivablesToMarketCap": 0.025090634115709984,
         "mcBasis": "trailing_24m",
         "interestIncomeNonOp": 175200000.0,
-        "purificationPerShare": 0.1965542282429769
+        "purificationPerShare": 0.19646951327053216
       }
     },
     {
@@ -186,20 +186,20 @@
       "sector": "Technology",
       "region": "APAC",
       "currency": "TWD",
-      "price": 74.64562729001045,
+      "price": 74.63859347626567,
       "priceLocal": 2375.0,
       "revGrowthTtm": 0.36,
       "fwdEpsGrowth": 0.6613569842197544,
-      "debtToMc": 0.028755516534437867,
+      "debtToMc": 0.028716144909135398,
       "score": 88.5,
-      "purificationPerShare": 0.12815458750164038,
+      "purificationPerShare": 0.12814251156991133,
       "ratios": {
-        "debtToMarketCap": 0.028755516534437867,
-        "cashToMarketCap": 0.08449246260567418,
-        "receivablesToMarketCap": 0.007618720451957672,
+        "debtToMarketCap": 0.028716144909135398,
+        "cashToMarketCap": 0.08437677678328216,
+        "receivablesToMarketCap": 0.007608289013295823,
         "mcBasis": "trailing_24m",
-        "interestIncomeNonOp": 3323352188.8762712,
-        "purificationPerShare": 0.12815458750164038
+        "interestIncomeNonOp": 3323039031.34577,
+        "purificationPerShare": 0.12814251156991133
       }
     },
     {
@@ -227,24 +227,28 @@
   ],
   "meta": {
     "universeSize": 164,
-    "compliantCount": 112,
+    "compliantCount": 106,
     "notes": [
+      "tier2:HD:missing_market_cap",
       "tier2:NEE:debt_screen",
+      "tier2:CRM:missing_market_cap",
       "tier2:TSM:debt_screen",
       "tier2:NVO:debt_screen",
       "tier2:DE:debt_screen",
       "tier2:HON:debt_screen",
-      "tier2:LOW:debt_screen",
+      "tier2:LOW:missing_market_cap",
       "tier2:AMT:debt_screen",
       "tier2:TM:debt_screen",
       "tier2:SONY:debt_screen",
+      "tier2:ADI:missing_market_cap",
+      "tier2:AZO:missing_market_cap",
       "tier2:IQV:debt_screen",
       "tier2:SHEL:debt_screen",
       "tier1:DGE.L:ticker_denylist",
       "tier1:BATS.L:ticker_denylist",
       "tier1:LLOY.L:ticker_denylist",
       "tier1:HSBA.L:ticker_denylist",
-      "tier2:SIE.DE:debt_screen",
+      "tier2:SIE.DE:missing_market_cap",
       "tier1:ALV.DE:ticker_denylist",
       "tier2:DTE.DE:debt_screen",
       "tier1:AIR.PA:banned_industry",
@@ -254,7 +258,9 @@
       "tier2:9984.T:debt_screen",
       "tier2:2317.TW:debt_screen",
       "tier1:CBA.AX:ticker_denylist",
-      "tier2:WOW.AX:debt_screen",
+      "tier2:WOW.AX:missing_market_cap",
+      "tier2:RELIANCE.NS:missing_market_cap",
+      "tier2:TCS.NS:missing_market_cap",
       "tier1:JPM:ticker_denylist",
       "tier1:BAC:ticker_denylist",
       "tier1:WFC:ticker_denylist",
@@ -282,7 +288,7 @@
       "tier1:COIN:ticker_denylist",
       "tier1:SCHW:ticker_denylist"
     ],
-    "generatedAt": "2026-08-24T20:23:16.896308+00:00",
+    "generatedAt": "2026-08-24T22:29:09.432685+00:00",
     "dividendCandidates": 8,
     "growthCandidates": 11
   }

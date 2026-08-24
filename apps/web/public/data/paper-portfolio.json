@@ -5,9 +5,9 @@
     "cashInvested": 2000.0,
     "dividendsReinvested": 0.0,
     "totalCostBasis": 2000.0,
-    "currentValue": 2000.2046,
-    "unrealizedPnl": 0.2046,
-    "returnPct": 0.0001023,
+    "currentValue": 1997.0586,
+    "unrealizedPnl": -2.9414,
+    "returnPct": -0.0014707,
     "positionCount": 10,
     "dividendEventCount": 0
   },
@@ -20,8 +20,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 200.0,
       "dca": 75.1881,
-      "currentPrice": 75.7457,
-      "marketValue": 201.4831,
+      "currentPrice": 74.6386,
+      "marketValue": 198.5383,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-08-24"
@@ -62,8 +62,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 200.0,
       "dca": 532.1593,
-      "currentPrice": 535.9352,
-      "marketValue": 201.4191,
+      "currentPrice": 528.0047,
+      "marketValue": 198.4386,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-08-24"
@@ -90,8 +90,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 200.0,
       "dca": 158.5291,
-      "currentPrice": 157.9544,
-      "marketValue": 199.275,
+      "currentPrice": 158.8085,
+      "marketValue": 200.3525,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-08-24"
@@ -132,8 +132,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 200.0,
       "dca": 91.7573,
-      "currentPrice": 91.3312,
-      "marketValue": 199.0714,
+      "currentPrice": 92.112,
+      "marketValue": 200.7732,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-08-24"
@@ -378,5 +378,5 @@
   "dividendEvents": [],
   "lastBuyAsOf": "2026-08-24",
   "lastDividendCheckAsOf": "2026-08-24",
-  "generatedAt": "2026-08-24T20:23:27.177944+00:00"
+  "generatedAt": "2026-08-24T22:29:19.265463+00:00"
 }
