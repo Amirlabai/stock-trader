@@ -22,6 +22,7 @@ Each unique ticker on a day's pick list is bought for USD 100. The same ticker o
 | Paper buy size | USD 100 per pick lot | New cash per unique ticker per `asOf` |
 | Same-day overlap | One lot | Dividend track preferred |
 | Repeat buy | Every new `asOf` while still on the unique pick list | Already held does not skip |
+| Screen calendar | Weekdays only | Cron Mon–Fri 22:00 UTC; `asOf` snaps to the last weekday if the job lands on a weekend |
 | Journal | Every fill | Date, side, shares, price, cash invested after, reason |
 
 ## Tier 1: Sector and business activity

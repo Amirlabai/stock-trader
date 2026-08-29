@@ -85,7 +85,8 @@ input {
     font-size: 1.2rem;
   }
 
-  .method-summary-title {
+  .method-summary-title,
+  .disclose-title {
     font-size: 1.2rem;
   }
 
@@ -213,6 +214,80 @@ main {
   font-size: 1.35rem;
 }
 
+.disclose-summary {
+  display: grid;
+  gap: 0.2rem;
+  list-style: none;
+  cursor: pointer;
+  min-height: 44px;
+  align-content: center;
+}
+
+.disclose-summary::-webkit-details-marker {
+  display: none;
+}
+
+.disclose-summary::after {
+  content: "Show";
+  justify-self: start;
+  margin-top: 0.45rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+details[open] > .disclose-summary::after {
+  content: "Hide";
+}
+
+.disclose-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 550;
+  letter-spacing: -0.02em;
+}
+
+.disclose-title-nested {
+  font-size: 1.05rem;
+}
+
+.disclose-hint {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.disclose-body {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.disclose-summary-nested {
+  margin-top: 0.25rem;
+}
+
+.subfold {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.subfold > .disclose-summary::after {
+  margin-top: 0.35rem;
+}
+
+.subfold > .disclose-body {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+}
+
+.portfolio-lede {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 .table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -242,7 +317,9 @@ th {
 
 @media (max-width: 719px) {
   .table-wrap {
-    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
+    max-width: 100%;
   }
 
   .data-table thead {
@@ -258,18 +335,23 @@ th {
   }
 
   .data-table,
-  .data-table tbody,
-  .data-table tr,
-  .data-table td {
+  .data-table tbody {
     display: block;
     width: 100%;
+    max-width: 100%;
   }
 
   .data-table tr {
-    margin: 0 0 0.75rem;
-    padding: 0.15rem 0 0.35rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0.35rem 0.65rem;
+    margin: 0 0 0.65rem;
+    padding: 0.55rem 0.65rem 0.6rem;
     border: 1px solid var(--line);
     background: rgba(15, 26, 23, 0.28);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .data-table tr:last-child {
@@ -278,37 +360,78 @@ th {
 
   .data-table td {
     display: grid;
-    grid-template-columns: minmax(6.5rem, 38%) 1fr;
-    gap: 0.65rem;
-    align-items: start;
-    padding: 0.55rem 0.75rem;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .data-table td:last-child {
+    grid-template-rows: auto auto;
+    gap: 0.12rem;
+    align-content: start;
+    min-width: 0;
+    width: auto;
+    max-width: 100%;
+    padding: 0.2rem 0;
     border-bottom: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-variant-numeric: tabular-nums;
   }
 
   .data-table td::before {
     content: attr(data-label);
     color: var(--muted);
-    font-size: 0.72rem;
+    font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    line-height: 1.35;
-    padding-top: 0.15rem;
+    line-height: 1.25;
+    padding-top: 0;
+  }
+
+  .data-table td[data-label="Ticker"],
+  .data-table td[data-label="Reason"] {
+    grid-column: 1 / -1;
   }
 
   .data-table td[data-label="Ticker"] {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.2rem 0.5rem;
+    padding: 0.05rem 0 0.4rem;
+    margin-bottom: 0.1rem;
+    border-bottom: 1px solid var(--line);
   }
 
   .data-table td[data-label="Ticker"]::before {
     display: none;
+  }
+
+  .data-table td[data-label="Ticker"] .linkish {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.2rem 0.5rem;
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .data-table td[data-label="Ticker"] .sub {
+    display: inline;
+  }
+
+  .data-table td[data-label="Reason"] {
+    margin-top: 0.1rem;
+    padding-top: 0.35rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .data-table td[data-label="Notes"] {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 380px) and (max-width: 719px) {
+  .data-table tr {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.3rem 0.5rem;
+    padding: 0.5rem 0.55rem 0.55rem;
   }
 }
 
@@ -396,56 +519,6 @@ th {
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 550;
-}
-
-.journal {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-}
-
-.journal-summary {
-  display: grid;
-  gap: 0.2rem;
-  list-style: none;
-  cursor: pointer;
-  min-height: 44px;
-  align-content: center;
-}
-
-.journal-summary::-webkit-details-marker {
-  display: none;
-}
-
-.journal-summary::after {
-  content: "Show";
-  justify-self: start;
-  margin-top: 0.45rem;
-  color: var(--accent);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.journal[open] .journal-summary::after {
-  content: "Hide";
-}
-
-.journal-summary-title {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 550;
-}
-
-.journal-summary-hint {
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.journal .table-wrap,
-.journal .empty {
-  margin-top: 0.75rem;
 }
 
 .stat-label {
@@ -574,50 +647,10 @@ th {
   padding-top: 1rem;
 }
 
-.method-summary {
-  display: grid;
-  gap: 0.2rem;
-  list-style: none;
-  cursor: pointer;
-  min-height: 44px;
-  align-content: center;
-}
-
-.method-summary::-webkit-details-marker {
-  display: none;
-}
-
-.method-summary::after {
-  content: "Show";
-  justify-self: start;
-  margin-top: 0.45rem;
-  color: var(--accent);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.method-panel[open] .method-summary::after {
-  content: "Hide";
-}
-
-.method-summary-title {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 550;
-  letter-spacing: -0.02em;
-}
-
-.method-summary-hint {
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
 .method-lede {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .method-body {

@@ -1,7 +1,8 @@
 name: Weekday screen and deploy
 
 on:
-  # 22:00 UTC Monday–Friday (markets / post-close window)
+  # 22:00 UTC Monday–Friday. GitHub may delay a run into Sat/Sun UTC;
+  # the screener snaps asOf to the last weekday so weekend buy days are not created.
   schedule:
     - cron: "0 22 * * 1-5"
   workflow_dispatch:

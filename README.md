@@ -1,6 +1,6 @@
 # Halal Dual-Strategy Stock Screener
 
-Daily Shariah-compliant dividend and growth picks. Static site on GitHub Pages; screening runs in GitHub Actions via `yfinance` on weekdays (Mon–Fri, 22:00 UTC).
+Daily Shariah-compliant dividend and growth picks. Static site on GitHub Pages; screening is scheduled Mon–Fri 22:00 UTC via GitHub Actions (`yfinance`). If a job is delayed into the weekend, `asOf` still snaps to the last weekday.
 
 ## Local development
 

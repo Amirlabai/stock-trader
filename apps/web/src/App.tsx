@@ -38,6 +38,8 @@ function App() {
   }, [])
 
   const buyAmount = data?.buyAmountUsd ?? portfolio?.buyAmountUsd ?? 100
+  const dividendCount = data?.dividendPicks?.length ?? 0
+  const growthCount = data?.growthPicks?.length ?? 0
 
   return (
     <div className="app">
@@ -70,41 +72,49 @@ function App() {
       </header>
 
       <main>
-        <section className="panel">
-          <div className="panel-head">
-            <div>
-              <p className="eyebrow">Track A</p>
-              <h2>Halal Dividend Daily Picks</h2>
-              <p className="lede">Top five by composite score after AAOIFI-style screens.</p>
-            </div>
+        <details className="panel" defaultOpen>
+          <summary className="disclose-summary">
+            <span className="eyebrow">Track A</span>
+            <span className="disclose-title">Halal Dividend Daily Picks</span>
+            <span className="disclose-hint muted">
+              {data
+                ? `Top ${dividendCount || 5} by composite score after AAOIFI-style screens`
+                : 'Top five by composite score after AAOIFI-style screens'}
+            </span>
+          </summary>
+          <div className="disclose-body">
+            {!data ? (
+              <p className="empty">Loading picks…</p>
+            ) : (
+              <DividendTable
+                picks={data.dividendPicks}
+                onSelect={(pick) => setAudit({ track: 'dividend', pick })}
+              />
+            )}
           </div>
-          {!data ? (
-            <p className="empty">Loading picks…</p>
-          ) : (
-            <DividendTable
-              picks={data.dividendPicks}
-              onSelect={(pick) => setAudit({ track: 'dividend', pick })}
-            />
-          )}
-        </section>
+        </details>
 
-        <section className="panel">
-          <div className="panel-head">
-            <div>
-              <p className="eyebrow">Track B</p>
-              <h2>Halal Growth Daily Picks</h2>
-              <p className="lede">Top five compounders with compliant capital structures.</p>
-            </div>
+        <details className="panel" defaultOpen>
+          <summary className="disclose-summary">
+            <span className="eyebrow">Track B</span>
+            <span className="disclose-title">Halal Growth Daily Picks</span>
+            <span className="disclose-hint muted">
+              {data
+                ? `Top ${growthCount || 5} compounders with compliant capital structures`
+                : 'Top five compounders with compliant capital structures'}
+            </span>
+          </summary>
+          <div className="disclose-body">
+            {!data ? (
+              <p className="empty">Loading picks…</p>
+            ) : (
+              <GrowthTable
+                picks={data.growthPicks}
+                onSelect={(pick) => setAudit({ track: 'growth', pick })}
+              />
+            )}
           </div>
-          {!data ? (
-            <p className="empty">Loading picks…</p>
-          ) : (
-            <GrowthTable
-              picks={data.growthPicks}
-              onSelect={(pick) => setAudit({ track: 'growth', pick })}
-            />
-          )}
-        </section>
+        </details>
 
         {portfolio && <PortfolioPanel portfolio={portfolio} />}
 

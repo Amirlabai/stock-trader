@@ -69,23 +69,25 @@ const blocks: MdBlock[] = blocksForUserView(
 export function ScreenMethodPanel() {
   return (
     <details className="panel method-panel" id="how-we-pick">
-      <summary className="method-summary">
+      <summary className="disclose-summary">
         <span className="eyebrow">Methodology</span>
-        <span className="method-summary-title">How stocks are picked</span>
-        <span className="method-summary-hint muted">
+        <span className="disclose-title">How stocks are picked</span>
+        <span className="disclose-hint muted">
           Thresholds, AAOIFI-style screens, and strategy scores
         </span>
       </summary>
 
-      <p className="lede method-lede">
-        Thresholds applied in order: universe, Tier 1 activity screen, Tier 2 AAOIFI-style
-        ratios, then the dividend or growth strategy score.
-      </p>
+      <div className="disclose-body">
+        <p className="lede method-lede">
+          Thresholds applied in order: universe, Tier 1 activity screen, Tier 2 AAOIFI-style
+          ratios, then the dividend or growth strategy score.
+        </p>
 
-      <div className="method-body">
-        {blocks.map((block, i) => (
-          <BlockView key={i} block={block} />
-        ))}
+        <div className="method-body">
+          {blocks.map((block, i) => (
+            <BlockView key={i} block={block} />
+          ))}
+        </div>
       </div>
     </details>
   )

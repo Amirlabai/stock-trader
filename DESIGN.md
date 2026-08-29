@@ -158,7 +158,7 @@ A single centered column: `min(1120px, calc(100% - 2rem))`, top padding 2.5rem, 
 
 The header becomes two columns at 800px (1.6fr brand block, 1fr as-of meta, aligned to the bottom). Main stacks three square chambers: Dividend, Growth, Paper portfolio.
 
-Below 720px, wide data tables reflow into labeled ledger cards (one pick or position per chamber). Stat tiles use a two-column grid, collapsing to one column under 380px. The audit drawer becomes a full-width sheet. Touch targets for tickers and Close are at least 44px.
+Below 720px, wide data tables reflow into compact ledger cards: ticker and name on one line, metrics in a two-column label-over-value grid (three columns from 380px). Cards stay inside the column with no horizontal page scroll. Stat tiles use a two-column grid, collapsing to one column under 380px. The audit drawer becomes a full-width sheet. Touch targets for tickers and Close are at least 44px.
 
 Above 720px, tables stay tabular and may scroll horizontally inside the chamber rather than breaking the column. Stat tiles sit in an auto-fit grid (`minmax(9.5rem, 1fr)`). Cell padding is 0.7rem by 0.55rem. Group spacing is tight; section spacing is generous.
 
@@ -197,7 +197,7 @@ Live primitives only. Unused filled and small-button leftovers were removed from
 
 ### Tables
 - Desktop: collapse, full width, 0.92rem body. Headers are uppercase sage labels. Rows divide with Hairline Frost. Numeric audit cells use tabular nums.
-- Mobile (below 720px): each row becomes a labeled ledger card via `data-label`; the ticker cell leads without a duplicate label. Empty states are a single sage sentence, not an illustration.
+- Mobile (below 720px): each row becomes a compact labeled ledger card via `data-label`; ticker leads full-width with name beside it; metrics pack in two or three columns with the label above the value. Empty states are a single sage sentence, not an illustration.
 
 ### Stat tiles
 - No box. A top hairline and padding. Uppercase sage label over a Fraunces figure. Positive figures take Compliant Mint; negative take Dusty Coral.

@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -20,6 +20,18 @@ from universe_loader import load_universe
 
 DEFAULT_OUT = ROOT.parent / "apps" / "web" / "public" / "data" / "daily-picks.json"
 BUY_AMOUNT_USD = 100
+
+
+def trading_as_of(day: date | None = None) -> date:
+    """Last weekday on or before day.
+
+    GitHub schedule runs Mon–Fri 22:00 UTC but jobs can land on Sat/Sun UTC.
+    Snap asOf so delayed Friday runs do not create weekend buy days.
+    """
+    d = day or date.today()
+    while d.weekday() >= 5:  # Saturday=5, Sunday=6
+        d -= timedelta(days=1)
+    return d
 
 
 def pick_to_dividend(p) -> dict:
@@ -118,7 +130,7 @@ def run(limit: int | None = None, sleep_s: float = 0.35) -> dict:
     growth_picks.sort(key=lambda p: p.score, reverse=True)
 
     payload = {
-        "asOf": date.today().isoformat(),
+        "asOf": trading_as_of().isoformat(),
         "buyAmountUsd": BUY_AMOUNT_USD,
         "dividendPicks": [pick_to_dividend(p) for p in dividend_picks[:5]],
         "growthPicks": [pick_to_growth(p) for p in growth_picks[:5]],

@@ -7,7 +7,7 @@ Static daily dashboard for Shariah-compliant (AAOIFI-style) equity picks, split 
 - **Frontend:** Vite + React + TypeScript in `apps/web/`. Loads `public/data/daily-picks.json` and `public/data/paper-portfolio.json`.
 - **Pipeline:** Python screener in `pipeline/`. Fail-closed Tier 1 (missing sector/industry rejected). Tier 2 ratios fail closed on missing debt/cash/receivables. Prices stored in USD (FX via Yahoo pairs; GBp handled).
 - **Paper portfolio:** Shared ledger with DCA / mark-to-market / DRIP. Dedupes tickers across tracks per day. Repeat buy: another lot on every new `asOf` while the ticker is still on the unique pick list. Journal lists every fill; positions are the mark-to-market snapshot.
-- **CI:** Screen runs Mon–Fri at 22:00 UTC (and on `workflow_dispatch`); push builds from committed data.
+- **CI:** Screen cron is Mon–Fri 22:00 UTC; GitHub may delay into weekend UTC. `asOf` snaps to the last weekday so delayed runs do not create Sat/Sun buy days. Manual `workflow_dispatch` uses the same snap. Push builds from committed data.
 
 ## Key parameters
 - Full screen parameter reference: `pipeline/SCREEN_PARAMETERS.md`.
@@ -22,7 +22,8 @@ Static daily dashboard for Shariah-compliant (AAOIFI-style) equity picks, split 
 - Captured in root `DESIGN.md` (tokens in YAML frontmatter) and `.impeccable/design.json`.
 - North star: The Quiet Ledger. Dark pine interiors, antique-brass citations, Fraunces + Source Sans 3, square hairline chambers, no shadows.
 - CSS tokens live in `apps/web/src/App.css` (`--bg0` through `--danger`, `--font-display`, `--font-body`).
-- Mobile (under 720px): data rows reflow to labeled ledger cards; audit drawer is full-width; tap targets ≥44px.
+- Mobile (under 720px): compact ledger cards (ticker + name on one line; metrics in 2–3 columns); audit drawer is full-width; tap targets ≥44px.
+- Main panels use disclosure summaries; Track A, Track B, and Paper portfolio default open; Methodology and Transactions default closed.
 - Methodology panel (collapsed at bottom) parses `pipeline/SCREEN_PARAMETERS.md` (synced to `apps/web/src/content/screen-parameters.md` by Vite).
 
 ## Conventions
