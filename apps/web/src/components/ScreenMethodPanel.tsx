@@ -5,6 +5,7 @@ import {
   type MdInline,
 } from '../lib/parseScreenMd'
 import screenParametersMarkdown from '../content/screen-parameters.md?raw'
+import { Disclose } from './Disclose'
 
 function InlineParts({ parts }: { parts: MdInline[] }) {
   return (
@@ -68,16 +69,19 @@ const blocks: MdBlock[] = blocksForUserView(
 
 export function ScreenMethodPanel() {
   return (
-    <details className="panel method-panel" id="how-we-pick">
-      <summary className="disclose-summary">
-        <span className="eyebrow">Methodology</span>
-        <span className="disclose-title">How stocks are picked</span>
-        <span className="disclose-hint muted">
-          Thresholds, AAOIFI-style screens, and strategy scores
-        </span>
-      </summary>
-
-      <div className="disclose-body">
+    <Disclose
+      className="panel method-panel"
+      summary={
+        <>
+          <span className="eyebrow">Methodology</span>
+          <span className="disclose-title">How stocks are picked</span>
+          <span className="disclose-hint muted">
+            Thresholds, AAOIFI-style screens, and strategy scores
+          </span>
+        </>
+      }
+    >
+      <div className="disclose-body" id="how-we-pick">
         <p className="lede method-lede">
           Thresholds applied in order: universe, Tier 1 activity screen, Tier 2 AAOIFI-style
           ratios, then the dividend or growth strategy score.
@@ -89,6 +93,6 @@ export function ScreenMethodPanel() {
           ))}
         </div>
       </div>
-    </details>
+    </Disclose>
   )
 }

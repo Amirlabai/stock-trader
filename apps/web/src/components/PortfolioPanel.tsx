@@ -1,5 +1,6 @@
 import type { LotSide, PaperPortfolio, PortfolioLot } from '../types/portfolio'
 import { num, pct, usd } from '../lib/format'
+import { Disclose } from './Disclose'
 
 type Props = {
   portfolio: PaperPortfolio
@@ -37,15 +38,19 @@ export function PortfolioPanel({ portfolio }: Props) {
   const fills = journalRows(portfolio.lots || [])
 
   return (
-    <details className="panel" defaultOpen>
-      <summary className="disclose-summary">
-        <span className="eyebrow">Paper portfolio</span>
-        <span className="disclose-title">Shared ledger as of {portfolio.asOf}</span>
-        <span className="disclose-hint muted">
-          {usd(portfolio.buyAmountUsd, 0)} per unique daily pick · repeat buys while still listed
-        </span>
-      </summary>
-
+    <Disclose
+      className="panel"
+      startOpen
+      summary={
+        <>
+          <span className="eyebrow">Paper portfolio</span>
+          <span className="disclose-title">Shared ledger as of {portfolio.asOf}</span>
+          <span className="disclose-hint muted">
+            {usd(portfolio.buyAmountUsd, 0)} per unique daily pick · repeat buys while still listed
+          </span>
+        </>
+      }
+    >
       <div className="disclose-body">
         <p className="lede portfolio-lede">
           Each unique ticker on a day's pick list is bought for{' '}
@@ -79,15 +84,21 @@ export function PortfolioPanel({ portfolio }: Props) {
           </div>
         </div>
 
-        <details className="subfold" defaultOpen>
-          <summary className="disclose-summary disclose-summary-nested">
-            <span className="disclose-title disclose-title-nested">Holdings</span>
-            <span className="disclose-hint muted">
-              {s.positionCount === 0
-                ? 'No positions yet'
-                : `${s.positionCount} position${s.positionCount === 1 ? '' : 's'}`}
-            </span>
-          </summary>
+        <Disclose
+          className="subfold"
+          startOpen
+          summaryClassName="disclose-summary disclose-summary-nested"
+          summary={
+            <>
+              <span className="disclose-title disclose-title-nested">Holdings</span>
+              <span className="disclose-hint muted">
+                {s.positionCount === 0
+                  ? 'No positions yet'
+                  : `${s.positionCount} position${s.positionCount === 1 ? '' : 's'}`}
+              </span>
+            </>
+          }
+        >
           <div className="disclose-body">
             {portfolio.positions.length === 0 ? (
               <p className="empty">No positions in the ledger yet.</p>
@@ -125,17 +136,22 @@ export function PortfolioPanel({ portfolio }: Props) {
               </div>
             )}
           </div>
-        </details>
+        </Disclose>
 
-        <details className="subfold journal">
-          <summary className="disclose-summary disclose-summary-nested">
-            <span className="disclose-title disclose-title-nested">Transactions</span>
-            <span className="disclose-hint muted">
-              {fills.length === 0
-                ? 'No fills recorded yet'
-                : `${fills.length} fill${fills.length === 1 ? '' : 's'}, newest first`}
-            </span>
-          </summary>
+        <Disclose
+          className="subfold journal"
+          summaryClassName="disclose-summary disclose-summary-nested"
+          summary={
+            <>
+              <span className="disclose-title disclose-title-nested">Transactions</span>
+              <span className="disclose-hint muted">
+                {fills.length === 0
+                  ? 'No fills recorded yet'
+                  : `${fills.length} fill${fills.length === 1 ? '' : 's'}, newest first`}
+              </span>
+            </>
+          }
+        >
           <div className="disclose-body">
             {fills.length === 0 ? (
               <p className="empty">No fills recorded yet.</p>
@@ -172,8 +188,8 @@ export function PortfolioPanel({ portfolio }: Props) {
               </div>
             )}
           </div>
-        </details>
+        </Disclose>
       </div>
-    </details>
+    </Disclose>
   )
 }

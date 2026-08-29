@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import type { DailyPicks, DividendPick, GrowthPick } from './types/picks'
 import type { PaperPortfolio } from './types/portfolio'
 import { AuditDrawer } from './components/AuditDrawer'
+import { Disclose } from './components/Disclose'
 import { DividendTable } from './components/DividendTable'
 import { GrowthTable } from './components/GrowthTable'
 import { PortfolioPanel } from './components/PortfolioPanel'
@@ -72,16 +73,21 @@ function App() {
       </header>
 
       <main>
-        <details className="panel" defaultOpen>
-          <summary className="disclose-summary">
-            <span className="eyebrow">Track A</span>
-            <span className="disclose-title">Halal Dividend Daily Picks</span>
-            <span className="disclose-hint muted">
-              {data
-                ? `Top ${dividendCount || 5} by composite score after AAOIFI-style screens`
-                : 'Top five by composite score after AAOIFI-style screens'}
-            </span>
-          </summary>
+        <Disclose
+          className="panel"
+          startOpen
+          summary={
+            <>
+              <span className="eyebrow">Track A</span>
+              <span className="disclose-title">Halal Dividend Daily Picks</span>
+              <span className="disclose-hint muted">
+                {data
+                  ? `Top ${dividendCount || 5} by composite score after AAOIFI-style screens`
+                  : 'Top five by composite score after AAOIFI-style screens'}
+              </span>
+            </>
+          }
+        >
           <div className="disclose-body">
             {!data ? (
               <p className="empty">Loading picks…</p>
@@ -92,18 +98,23 @@ function App() {
               />
             )}
           </div>
-        </details>
+        </Disclose>
 
-        <details className="panel" defaultOpen>
-          <summary className="disclose-summary">
-            <span className="eyebrow">Track B</span>
-            <span className="disclose-title">Halal Growth Daily Picks</span>
-            <span className="disclose-hint muted">
-              {data
-                ? `Top ${growthCount || 5} compounders with compliant capital structures`
-                : 'Top five compounders with compliant capital structures'}
-            </span>
-          </summary>
+        <Disclose
+          className="panel"
+          startOpen
+          summary={
+            <>
+              <span className="eyebrow">Track B</span>
+              <span className="disclose-title">Halal Growth Daily Picks</span>
+              <span className="disclose-hint muted">
+                {data
+                  ? `Top ${growthCount || 5} compounders with compliant capital structures`
+                  : 'Top five compounders with compliant capital structures'}
+              </span>
+            </>
+          }
+        >
           <div className="disclose-body">
             {!data ? (
               <p className="empty">Loading picks…</p>
@@ -114,7 +125,7 @@ function App() {
               />
             )}
           </div>
-        </details>
+        </Disclose>
 
         {portfolio && <PortfolioPanel portfolio={portfolio} />}
 
