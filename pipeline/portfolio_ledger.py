@@ -298,9 +298,32 @@ def _round_money(x: float, n: int = 6) -> float:
     return round(float(x), n)
 
 
+def _lot_reason(lot: dict[str, Any]) -> str:
+    if lot.get("source") == "drip":
+        return "Dividend reinvestment"
+    track = lot.get("track")
+    if track == "dividend":
+        return "Daily pick, dividend track"
+    if track == "growth":
+        return "Daily pick, growth track"
+    return "Daily pick"
+
+
+def stamp_lot_journal(lots: list[dict[str, Any]]) -> None:
+    """Stamp each fill with side, reason, and running cash invested (pick lots only)."""
+    cash = 0.0
+    for lot in lots:
+        lot["side"] = "buy"
+        lot["reason"] = _lot_reason(lot)
+        if lot.get("source") == "pick":
+            cash += float(lot.get("costUsd") or 0)
+        lot["cashInvestedAfter"] = _round_money(cash, 4)
+
+
 def rebuild_positions(ledger: dict[str, Any], prices: dict[str, float] | None = None) -> None:
     prices = prices or {}
     lots: list[dict[str, Any]] = ledger.get("lots") or []
+    stamp_lot_journal(lots)
     by_ticker: dict[str, dict[str, Any]] = {}
 
     for lot in lots:
@@ -444,9 +467,23 @@ def _self_check() -> None:
     assert ledger["summary"]["cashInvested"] == 100
     assert abs(ledger["positions"][0]["shares"] - 2.0) < 1e-9
     assert abs(ledger["positions"][0]["marketValue"] - 120.0) < 1e-6
+    assert ledger["lots"][0]["side"] == "buy"
+    assert ledger["lots"][0]["reason"] == "Daily pick, dividend track"
+    assert ledger["lots"][0]["cashInvestedAfter"] == 100
+
+    picks_next = {
+        "asOf": "2026-01-03",
+        "buyAmountUsd": 100,
+        "dividendPicks": [{"ticker": "X", "name": "X Co", "price": 50}],
+        "growthPicks": [],
+    }
+    assert apply_daily_buys(ledger, picks_next)
+    assert not apply_daily_buys(ledger, picks_next)
+    assert len([L for L in ledger["lots"] if L.get("source") == "pick"]) == 2
+
     ledger["lots"].append(
         {
-            "asOf": "2026-01-03",
+            "asOf": "2026-01-04",
             "ticker": "X",
             "name": "X Co",
             "source": "drip",
@@ -458,7 +495,13 @@ def _self_check() -> None:
     )
     rebuild_positions(ledger, {"X": 60})
     assert ledger["summary"]["dividendsReinvested"] == 1.0
-    assert ledger["summary"]["cashInvested"] == 100
+    assert ledger["summary"]["cashInvested"] == 200
+    assert ledger["lots"][0]["cashInvestedAfter"] == 100
+    assert ledger["lots"][1]["cashInvestedAfter"] == 200
+    drip = next(L for L in ledger["lots"] if L.get("source") == "drip")
+    assert drip["side"] == "buy"
+    assert drip["reason"] == "Dividend reinvestment"
+    assert drip["cashInvestedAfter"] == 200
     print("self-check ok")
 
 

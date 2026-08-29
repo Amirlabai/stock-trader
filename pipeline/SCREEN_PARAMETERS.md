@@ -13,6 +13,17 @@ All strategy filters run only after Tier 1 and Tier 2 pass. Fail closed on missi
 | Paper buy size | USD 100 per pick lot | `BUY_AMOUNT_USD` |
 | Default fetch sleep | 0.35 s between tickers | `--sleep` |
 
+## Paper ledger
+
+Each unique ticker on a day's pick list is bought for USD 100. The same ticker on both tracks that day is one lot (dividend track preferred). If the ticker remains on a later day's unique list, another lot is bought. Already holding the name does not skip the buy. `lastBuyAsOf` only blocks applying the same calendar date twice. Dividend reinvestment adds shares but does not add cash invested. Holdings are the mark-to-market snapshot; the transaction journal lists every fill.
+
+| Parameter | Value | Notes |
+|---|---|---|
+| Paper buy size | USD 100 per pick lot | New cash per unique ticker per `asOf` |
+| Same-day overlap | One lot | Dividend track preferred |
+| Repeat buy | Every new `asOf` while still on the unique pick list | Already held does not skip |
+| Journal | Every fill | Date, side, shares, price, cash invested after, reason |
+
 ## Tier 1: Sector and business activity
 
 Fail closed if sector or industry is missing. Optional haram revenue share, when known, must stay below the limit.

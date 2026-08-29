@@ -391,17 +391,61 @@ th {
   color: var(--danger);
 }
 
-.dividend-log {
+.ledger-h3 {
+  margin: 1.25rem 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 550;
+}
+
+.journal {
   margin-top: 1.5rem;
   padding-top: 1rem;
   border-top: 1px solid var(--line);
 }
 
-.dividend-log h3 {
-  margin: 0 0 0.75rem;
+.journal-summary {
+  display: grid;
+  gap: 0.2rem;
+  list-style: none;
+  cursor: pointer;
+  min-height: 44px;
+  align-content: center;
+}
+
+.journal-summary::-webkit-details-marker {
+  display: none;
+}
+
+.journal-summary::after {
+  content: "Show";
+  justify-self: start;
+  margin-top: 0.45rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.journal[open] .journal-summary::after {
+  content: "Hide";
+}
+
+.journal-summary-title {
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 550;
+}
+
+.journal-summary-hint {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.journal .table-wrap,
+.journal .empty {
+  margin-top: 0.75rem;
 }
 
 .stat-label {

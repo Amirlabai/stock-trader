@@ -1,5 +1,6 @@
 export type LotSource = 'pick' | 'drip'
 export type LotTrack = 'dividend' | 'growth' | null
+export type LotSide = 'buy' | 'sell'
 
 export type PortfolioLot = {
   asOf: string
@@ -10,6 +11,9 @@ export type PortfolioLot = {
   price: number
   costUsd: number
   track: LotTrack
+  side: LotSide
+  reason: string
+  cashInvestedAfter: number
 }
 
 export type DividendEvent = {

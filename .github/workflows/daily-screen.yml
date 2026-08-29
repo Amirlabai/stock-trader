@@ -1,6 +1,7 @@
-name: Daily screen and deploy
+name: Weekday screen and deploy
 
 on:
+  # 22:00 UTC Monday–Friday (markets / post-close window)
   schedule:
     - cron: "0 22 * * 1-5"
   workflow_dispatch:

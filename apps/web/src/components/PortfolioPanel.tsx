@@ -1,15 +1,40 @@
-import type { PaperPortfolio } from '../types/portfolio'
+import type { LotSide, PaperPortfolio, PortfolioLot } from '../types/portfolio'
 import { num, pct, usd } from '../lib/format'
 
 type Props = {
   portfolio: PaperPortfolio
 }
 
+function lotReason(lot: PortfolioLot): string {
+  if (lot.reason) return lot.reason
+  if (lot.source === 'drip') return 'Dividend reinvestment'
+  if (lot.track === 'dividend') return 'Daily pick, dividend track'
+  if (lot.track === 'growth') return 'Daily pick, growth track'
+  return 'Daily pick'
+}
+
+function sideLabel(side: LotSide | undefined): string {
+  return side === 'sell' ? 'Sell' : 'Buy'
+}
+
+function journalRows(lots: PortfolioLot[]) {
+  let cash = 0
+  const chronological = lots.map((lot, index) => {
+    if (lot.source === 'pick') cash += lot.costUsd
+    return {
+      ...lot,
+      index,
+      side: lot.side ?? 'buy',
+      reason: lotReason(lot),
+      cashInvestedAfter: lot.cashInvestedAfter ?? cash,
+    }
+  })
+  return chronological.slice().reverse()
+}
+
 export function PortfolioPanel({ portfolio }: Props) {
   const s = portfolio.summary
-  const events = [...(portfolio.dividendEvents || [])]
-    .sort((a, b) => (a.asOf < b.asOf ? 1 : a.asOf > b.asOf ? -1 : 0))
-    .slice(0, 10)
+  const fills = journalRows(portfolio.lots || [])
 
   return (
     <section className="panel">
@@ -18,9 +43,10 @@ export function PortfolioPanel({ portfolio }: Props) {
           <p className="eyebrow">Paper portfolio</p>
           <h2>Shared ledger as of {portfolio.asOf}</h2>
           <p className="lede">
-            Each daily pick is bought for {usd(portfolio.buyAmountUsd, 0)}. Dividends are
-            reinvested (DRIP) when payout data is available. Figures are the same for every
-            visitor.
+            Each unique ticker on a day's pick list is bought for{' '}
+            {usd(portfolio.buyAmountUsd, 0)}. If it is still on the next day's unique list,
+            another lot is bought. Dividends are reinvested when payout data is available.
+            Figures are the same for every visitor.
           </p>
         </div>
       </div>
@@ -50,6 +76,7 @@ export function PortfolioPanel({ portfolio }: Props) {
         </div>
       </div>
 
+      <h3 className="ledger-h3">Holdings</h3>
       {portfolio.positions.length === 0 ? (
         <p className="empty">No positions in the ledger yet.</p>
       ) : (
@@ -86,10 +113,17 @@ export function PortfolioPanel({ portfolio }: Props) {
         </div>
       )}
 
-      <div className="dividend-log">
-        <h3>Recent dividend DRIP</h3>
-        {events.length === 0 ? (
-          <p className="empty">No dividend payouts recorded yet.</p>
+      <details className="journal">
+        <summary className="journal-summary">
+          <span className="journal-summary-title">Transactions</span>
+          <span className="journal-summary-hint muted">
+            {fills.length === 0
+              ? 'No fills recorded yet'
+              : `${fills.length} fill${fills.length === 1 ? '' : 's'}, newest first`}
+          </span>
+        </summary>
+        {fills.length === 0 ? (
+          <p className="empty">No fills recorded yet.</p>
         ) : (
           <div className="table-wrap">
             <table className="data-table">
@@ -97,28 +131,32 @@ export function PortfolioPanel({ portfolio }: Props) {
                 <tr>
                   <th>Date</th>
                   <th>Ticker</th>
-                  <th>$ / share</th>
-                  <th>Cash</th>
-                  <th>Reinvest price</th>
-                  <th>Shares bought</th>
+                  <th>Side</th>
+                  <th>Shares</th>
+                  <th>Price</th>
+                  <th>Cash invested after</th>
+                  <th>Reason</th>
                 </tr>
               </thead>
               <tbody>
-                {events.map((e) => (
-                  <tr key={`${e.asOf}-${e.ticker}-${e.amountPerShare}`}>
-                    <td data-label="Date">{e.asOf}</td>
-                    <td data-label="Ticker">{e.ticker}</td>
-                    <td data-label="$ / share">{usd(e.amountPerShare, 4)}</td>
-                    <td data-label="Cash">{usd(e.cash, 4)}</td>
-                    <td data-label="Reinvest price">{usd(e.reinvestPrice)}</td>
-                    <td data-label="Shares bought">{num(e.sharesBought, 6)}</td>
+                {fills.map((lot) => (
+                  <tr key={`${lot.asOf}-${lot.ticker}-${lot.source}-${lot.index}`}>
+                    <td data-label="Date">{lot.asOf}</td>
+                    <td data-label="Ticker">
+                      <strong>{lot.ticker}</strong>
+                    </td>
+                    <td data-label="Side">{sideLabel(lot.side)}</td>
+                    <td data-label="Shares">{num(lot.shares, 4)}</td>
+                    <td data-label="Price">{usd(lot.price)}</td>
+                    <td data-label="Cash invested after">{usd(lot.cashInvestedAfter)}</td>
+                    <td data-label="Reason">{lot.reason}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
         )}
-      </div>
+      </details>
     </section>
   )
 }

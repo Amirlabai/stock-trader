@@ -6,11 +6,13 @@
 - [x] Dual pick dashboard + compliance audit drawer
 - [x] View-only public UI (no per-visitor actions)
 - [x] Shared paper portfolio ledger (DCA, mark-to-market, dividends + DRIP)
-- [x] GitHub Actions daily screen + ledger commit + Pages deploy
+- [x] Transaction journal of every fill (not only aggregated holdings)
+- [x] GitHub Actions weekday (Mon–Fri) screen + ledger commit + Pages deploy
 
 ## Completed
 - `pipeline/portfolio_ledger.py` maintains `apps/web/public/data/paper-portfolio.json`
-- Dashboard shows cash invested, current value, P&L, per-ticker DCA, dividend DRIP log
+- Dashboard shows cash invested, current value, P&L, holdings snapshot, and a transaction journal of every fill
+- Repeat buy: another USD 100 lot on every new `asOf` while the ticker is still on the unique pick list
 - Visual system documented in `DESIGN.md` and `.impeccable/design.json` (Quiet Ledger)
 - Unused CSS and leftover Vite assets removed; look unchanged
 - `pipeline/SCREEN_PARAMETERS.md` documents Tier 1/2 and strategy thresholds
