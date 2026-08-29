@@ -29,6 +29,6 @@ Static daily dashboard for Shariah-compliant (AAOIFI-style) equity picks, split 
 ## Conventions
 - Product copy: formal plain language; no em dashes; no emoji.
 - Public UI is view-only (no per-visitor actions).
-- Expand the investable universe via `pipeline/universe/*.csv` (columns: `ticker,region,name`).
+- Expand the investable universe via `pipeline/universe/*.csv` (columns: `ticker,region,name`). Loader merges every CSV; `seed_global.csv` plus `seed_expansion.csv` are ~500 tickers before Tier 1.
 - Data contracts: `apps/web/src/types/picks.ts`, `apps/web/src/types/portfolio.ts`.
 - Vite `base` defaults to `/stock-trader/` for project Pages hosting.

@@ -18,8 +18,9 @@
 - `pipeline/SCREEN_PARAMETERS.md` documents Tier 1/2 and strategy thresholds
 - Mobile fit: compact horizontal ledger cards under 720px (2–3 metric columns, no page spill), 44px tap targets, safe-area insets, full-width audit drawer
 - Screen calendar: weekday `asOf` only; delayed weekend UTC jobs snap to Friday (no Sat/Sun buy days)
+- Universe expanded to ~527 tickers via `pipeline/universe/seed_expansion.csv` (US/UK/EU/APAC/CA)
 
 ## Next
 - Enable GitHub Pages and push to `main` for the first live deploy
-- Expand `pipeline/universe/*.csv` over time
+- Expand `pipeline/universe/*.csv` further over time as needed
 - Optional: `/impeccable init` to capture PRODUCT.md (not required for the current dashboard)

@@ -23,7 +23,7 @@ Output lands in `apps/web/public/data/daily-picks.json`.
 
 ## Expand universe
 
-Add rows to `pipeline/universe/*.csv` with columns `ticker,region,name`.
+Add rows to `pipeline/universe/*.csv` with columns `ticker,region,name`. All CSVs in that folder are merged (deduped by ticker). Current seed files cover roughly 500 liquid global names; Tier 1 still removes banks, insurers, alcohol, tobacco, gambling, and defense.
 
 ## Paper portfolio
 

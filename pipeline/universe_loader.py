@@ -21,7 +21,7 @@ def load_universe(universe_dir: Path) -> list[UniverseRow]:
             reader = csv.DictReader(fh)
             for raw in reader:
                 ticker = (raw.get("ticker") or "").strip()
-                if not ticker or ticker in seen:
+                if not ticker or ticker.startswith("#") or ticker in seen:
                     continue
                 seen.add(ticker)
                 rows.append(
