@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-08",
+  "asOf": "2026-10-09",
   "buyAmountUsd": 100,
   "dividendPicks": [
     {
@@ -8,17 +8,17 @@
       "sector": "Technology",
       "region": "US",
       "currency": "USD",
-      "price": 1088.0,
-      "priceLocal": 1088.0,
+      "price": 1035.84,
+      "priceLocal": 1035.84,
       "yield": 0.06,
       "divCagr5y": 0.23149303238398788,
       "fcfPayout": 0.40625652913669064,
       "score": 89.5,
       "purificationPerShare": 0.43917390464146705,
       "ratios": {
-        "debtToMarketCap": 0.038479336278676654,
-        "cashToMarketCap": 0.02595932183691061,
-        "receivablesToMarketCap": 0.02333492935082728,
+        "debtToMarketCap": 0.0381178566803435,
+        "cashToMarketCap": 0.025715456787819117,
+        "receivablesToMarketCap": 0.02311571816621171,
         "mcBasis": "trailing_24m",
         "interestIncomeNonOp": 496000000.0,
         "purificationPerShare": 0.43917390464146705
@@ -30,20 +30,20 @@
       "sector": "Consumer Cyclical",
       "region": "EU",
       "currency": "EUR",
-      "price": 435.2381156027317,
-      "priceLocal": 388.45,
-      "yield": 0.0337,
+      "price": 427.78526439666746,
+      "priceLocal": 380.9,
+      "yield": 0.0335,
       "divCagr5y": 0.16737752579810006,
       "fcfPayout": 0.4511473390355509,
       "score": 82.4,
-      "purificationPerShare": 0.5659458201350448,
+      "purificationPerShare": 0.5672805706042632,
       "ratios": {
-        "debtToMarketCap": 0.14149264349723836,
-        "cashToMarketCap": 0.05201148001687164,
-        "receivablesToMarketCap": 0.01668743381966286,
+        "debtToMarketCap": 0.14160304482829544,
+        "cashToMarketCap": 0.052052062597578205,
+        "receivablesToMarketCap": 0.01670045438992066,
         "mcBasis": "trailing_24m",
-        "interestIncomeNonOp": 278991609.69257355,
-        "purificationPerShare": 0.5659458201350448
+        "interestIncomeNonOp": 279649595.2606201,
+        "purificationPerShare": 0.5672805706042632
       }
     },
     {
@@ -52,20 +52,20 @@
       "sector": "Consumer Cyclical",
       "region": "EU",
       "currency": "EUR",
-      "price": 48.40336360931397,
-      "priceLocal": 43.2,
-      "yield": 0.0322,
+      "price": 48.30413290023804,
+      "priceLocal": 43.01,
+      "yield": 0.032400000000000005,
       "divCagr5y": 0.3037151418916615,
       "fcfPayout": 0.5142964661041787,
-      "score": 82.0,
-      "purificationPerShare": 0.10633949661278379,
+      "score": 82.1,
+      "purificationPerShare": 0.10659029216237631,
       "ratios": {
-        "debtToMarketCap": 0.08127884795588004,
-        "cashToMarketCap": 0.10525062616812014,
-        "receivablesToMarketCap": 0.021041309193514605,
+        "debtToMarketCap": 0.08130492183048524,
+        "cashToMarketCap": 0.10528439007715482,
+        "receivablesToMarketCap": 0.02104805914717707,
         "mcBasis": "trailing_24m",
-        "interestIncomeNonOp": 28923250.65302849,
-        "purificationPerShare": 0.10633949661278379
+        "interestIncomeNonOp": 28991464.46609497,
+        "purificationPerShare": 0.10659029216237631
       }
     },
     {
@@ -74,20 +74,20 @@
       "sector": "Communication Services",
       "region": "UK",
       "currency": "GBp",
-      "price": 6.22002613735199,
-      "priceLocal": 470.8,
+      "price": 6.436784481406212,
+      "priceLocal": 485.9,
       "yield": 0.025,
       "divCagr5y": 0.2066573686545059,
-      "fcfPayout": 0.3110435675016926,
+      "fcfPayout": 0.31104356750169265,
       "score": 80.8,
-      "purificationPerShare": 2.2431000160062165e-05,
+      "purificationPerShare": 2.2491320386823685e-05,
       "ratios": {
-        "debtToMarketCap": 0.0004080357861315912,
-        "cashToMarketCap": 3.5195503827464264e-05,
-        "receivablesToMarketCap": 5.859471241605315e-05,
+        "debtToMarketCap": 0.00040850252844574776,
+        "cashToMarketCap": 3.523576311712137e-05,
+        "receivablesToMarketCap": 5.8661737497185574e-05,
         "mcBasis": "trailing_24m",
-        "interestIncomeNonOp": 17175.093412399292,
-        "purificationPerShare": 2.2431000160062165e-05
+        "interestIncomeNonOp": 17221.279740333557,
+        "purificationPerShare": 2.2491320386823685e-05
       }
     },
     {
@@ -96,20 +96,20 @@
       "sector": "Healthcare",
       "region": "EU",
       "currency": "EUR",
-      "price": 164.31373317837716,
-      "priceLocal": 146.65,
+      "price": 160.60197639465332,
+      "priceLocal": 143.0,
       "yield": 0.0273,
       "divCagr5y": 0.38290814662670236,
       "fcfPayout": 0.4872316463090813,
       "score": 80.2,
-      "purificationPerShare": 0.2076131741781914,
+      "purificationPerShare": 0.20810281783627887,
       "ratios": {
-        "debtToMarketCap": 0.13757224014141164,
-        "cashToMarketCap": 0.033872314995228796,
-        "receivablesToMarketCap": 0.034760925797642415,
+        "debtToMarketCap": 0.13764553698254672,
+        "cashToMarketCap": 0.03389036175879485,
+        "receivablesToMarketCap": 0.03477944600239651,
         "mcBasis": "trailing_24m",
-        "interestIncomeNonOp": 95238099.69425201,
-        "purificationPerShare": 0.2076131741781914
+        "interestIncomeNonOp": 95462713.24157715,
+        "purificationPerShare": 0.20810281783627887
       }
     }
   ],
@@ -120,42 +120,20 @@
       "sector": "Technology",
       "region": "US",
       "currency": "USD",
-      "price": 237.47,
-      "priceLocal": 237.47,
+      "price": 230.48,
+      "priceLocal": 230.48,
       "revGrowthTtm": 1.059,
       "fwdEpsGrowth": 1.011959544879899,
-      "debtToMc": 0.002683824530286789,
+      "debtToMc": 0.0026807480508790195,
       "score": 100.0,
       "purificationPerShare": 0.09524992752722905,
       "ratios": {
-        "debtToMarketCap": 0.002683824530286789,
-        "cashToMarketCap": 0.01520736660476634,
-        "receivablesToMarketCap": 0.00935108644764598,
+        "debtToMarketCap": 0.0026807480508790195,
+        "cashToMarketCap": 0.015189934336122096,
+        "receivablesToMarketCap": 0.009340367257709453,
         "mcBasis": "trailing_24m",
         "interestIncomeNonOp": 2300000000.0,
         "purificationPerShare": 0.09524992752722905
-      }
-    },
-    {
-      "ticker": "MELI",
-      "name": "MercadoLibre",
-      "sector": "Consumer Cyclical",
-      "region": "US",
-      "currency": "USD",
-      "price": 1872.78,
-      "priceLocal": 1872.78,
-      "revGrowthTtm": 0.498,
-      "fwdEpsGrowth": 0.5406165352189285,
-      "debtToMc": 0.11059786865404257,
-      "score": 99.0,
-      "purificationPerShare": 2.7220651906208997,
-      "ratios": {
-        "debtToMarketCap": 0.11059786865404257,
-        "cashToMarketCap": 0.05352230072768054,
-        "receivablesToMarketCap": 0.16107173795990348,
-        "mcBasis": "trailing_24m",
-        "interestIncomeNonOp": 138000000.0,
-        "purificationPerShare": 2.7220651906208997
       }
     },
     {
@@ -164,42 +142,42 @@
       "sector": "Technology",
       "region": "US",
       "currency": "USD",
-      "price": 194.12,
-      "priceLocal": 194.12,
+      "price": 198.78,
+      "priceLocal": 198.78,
       "revGrowthTtm": 0.928,
       "fwdEpsGrowth": 1.0208275862068965,
-      "debtToMc": 0.0007463485949845326,
+      "debtToMc": 0.000743926113864204,
       "score": 98.5,
       "purificationPerShare": 0.09961301875867039,
       "ratios": {
-        "debtToMarketCap": 0.0007463485949845326,
-        "cashToMarketCap": 0.02335668733133443,
-        "receivablesToMarketCap": 0.0033912554772107415,
+        "debtToMarketCap": 0.000743926113864204,
+        "cashToMarketCap": 0.023280876732274147,
+        "receivablesToMarketCap": 0.0033802482181055984,
         "mcBasis": "trailing_24m",
         "interestIncomeNonOp": 229181000.0,
         "purificationPerShare": 0.09961301875867039
       }
     },
     {
-      "ticker": "LLY",
-      "name": "Eli Lilly",
-      "sector": "Healthcare",
+      "ticker": "ANET",
+      "name": "Arista Networks",
+      "sector": "Technology",
       "region": "US",
       "currency": "USD",
-      "price": 1188.72,
-      "priceLocal": 1188.72,
-      "revGrowthTtm": 0.477,
-      "fwdEpsGrowth": 0.5975981873111782,
-      "debtToMc": 0.05202537735830518,
-      "score": 98.5,
-      "purificationPerShare": 0.1965542282429769,
+      "price": 210.97,
+      "priceLocal": 210.97,
+      "revGrowthTtm": 0.377,
+      "fwdEpsGrowth": 0.6410063091482652,
+      "debtToMc": 0.00026581517318729494,
+      "score": 95.7,
+      "purificationPerShare": 0.303990253130543,
       "ratios": {
-        "debtToMarketCap": 0.05202537735830518,
-        "cashToMarketCap": 0.009085805026826994,
-        "receivablesToMarketCap": 0.024670528684013857,
+        "debtToMarketCap": 0.00026581517318729494,
+        "cashToMarketCap": 0.06495433549156378,
+        "receivablesToMarketCap": 0.011408576341713831,
         "mcBasis": "trailing_24m",
-        "interestIncomeNonOp": 175200000.0,
-        "purificationPerShare": 0.1965542282429769
+        "interestIncomeNonOp": 383400000.0,
+        "purificationPerShare": 0.303990253130543
       }
     },
     {
@@ -208,20 +186,42 @@
       "sector": "Technology",
       "region": "US",
       "currency": "USD",
-      "price": 87.55,
-      "priceLocal": 87.55,
+      "price": 85.32,
+      "priceLocal": 85.32,
       "revGrowthTtm": 0.55,
-      "fwdEpsGrowth": 0.658695,
-      "debtToMc": 0.11010935603025639,
-      "score": 95.5,
+      "fwdEpsGrowth": 0.6652199999999999,
+      "debtToMc": 0.10978660308423545,
+      "score": 95.4,
       "purificationPerShare": null,
       "ratios": {
-        "debtToMarketCap": 0.11010935603025639,
-        "cashToMarketCap": 0.0812161268688658,
-        "receivablesToMarketCap": 0.03350515051801847,
+        "debtToMarketCap": 0.10978660308423545,
+        "cashToMarketCap": 0.08097806586155108,
+        "receivablesToMarketCap": 0.033406940098609665,
         "mcBasis": "trailing_24m",
         "interestIncomeNonOp": null,
         "purificationPerShare": null
+      }
+    },
+    {
+      "ticker": "MPWR",
+      "name": "Monolithic Power Systems",
+      "sector": "Technology",
+      "region": "US",
+      "currency": "USD",
+      "price": 1369.8,
+      "priceLocal": 1369.8,
+      "revGrowthTtm": 0.476,
+      "fwdEpsGrowth": 1.12745498783455,
+      "debtToMc": 0.0004236170959307006,
+      "score": 90.6,
+      "purificationPerShare": 0.5931872291068921,
+      "ratios": {
+        "debtToMarketCap": 0.0004236170959307006,
+        "cashToMarketCap": 0.026652010004318154,
+        "receivablesToMarketCap": 0.006694600917295379,
+        "mcBasis": "trailing_24m",
+        "interestIncomeNonOp": 29151000.0,
+        "purificationPerShare": 0.5931872291068921
       }
     }
   ],
@@ -402,8 +402,8 @@
       "tier1:COIN:ticker_denylist",
       "tier1:SCHW:ticker_denylist"
     ],
-    "generatedAt": "2026-10-08T01:49:53.704150+00:00",
-    "dividendCandidates": 27,
-    "growthCandidates": 22
+    "generatedAt": "2026-10-09T01:57:45.958972+00:00",
+    "dividendCandidates": 28,
+    "growthCandidates": 20
   }
 }
