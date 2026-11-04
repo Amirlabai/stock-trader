@@ -11,7 +11,7 @@ colors:
   sage-caption: "#9bb0a6"
   hairline-frost: "rgba(232, 240, 236, 0.12)"
   compliant-mint: "#6fbf9a"
-  dusty-coral: "#e08a7a"
+  dusty-coral: "#e69584"
   veil: "rgba(6, 10, 9, 0.62)"
 typography:
   display:
@@ -158,7 +158,7 @@ A single centered column: `min(1120px, calc(100% - 2rem))`, top padding 2.5rem, 
 
 The header becomes two columns at 800px (1.6fr brand block, 1fr as-of meta, aligned to the bottom). Main stacks three square chambers: Dividend, Growth, Paper portfolio.
 
-Below 720px, wide data tables reflow into compact ledger cards: ticker and name on one line, metrics in a two-column label-over-value grid (three columns from 380px). Cards stay inside the column with no horizontal page scroll. Stat tiles use a two-column grid, collapsing to one column under 380px. The audit drawer becomes a full-width sheet. Touch targets for tickers and Close are at least 44px.
+Below 720px, wide data tables reflow into compact ledger cards: ticker and name on one line, metrics in a two-column label-over-value grid (three columns from 340px). Holdings cards carry unrealized P&L on the ticker line, right-aligned in the status color; transaction cards carry side and date on the ticker line, with the reason as a sage caption. Cards stay inside the column with no horizontal page scroll. Stat tiles use a two-column grid, collapsing to one column under 380px. The audit drawer becomes a full-width sheet. Touch targets for tickers and Close are at least 44px.
 
 Above 720px, tables stay tabular and may scroll horizontally inside the chamber rather than breaking the column. Stat tiles sit in an auto-fit grid (`minmax(9.5rem, 1fr)`). Cell padding is 0.7rem by 0.55rem. Group spacing is tight; section spacing is generous.
 

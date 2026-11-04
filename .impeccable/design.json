@@ -61,8 +61,8 @@
       "dusty-coral": {
         "role": "neutral",
         "displayName": "Dusty Coral",
-        "canonical": "#e08a7a",
-        "tonalRamp": ["#3a1c18", "#5c2e26", "#854338", "#b35c4e", "#e08a7a", "#ebb0a5", "#f3d0c9", "#faece9"]
+        "canonical": "#e69584",
+        "tonalRamp": ["#3a1c18", "#5c2e26", "#854338", "#b35c4e", "#e69584", "#ebb0a5", "#f3d0c9", "#faece9"]
       },
       "veil": {
         "role": "neutral",
@@ -131,7 +131,7 @@
       "refersTo": "stat-value",
       "description": "Ledger figure with uppercase sage label. Positive mint, negative coral.",
       "html": "<div class=\"ds-stat\"><span class=\"ds-stat-label\">Current value</span><strong>12,400.00 USD</strong></div>",
-      "css": ".ds-stat { padding: 0.75rem 0.85rem; border-top: 1px solid rgba(232, 240, 236, 0.12); color: #e8f0ec; font-family: \"Source Sans 3\", \"Segoe UI\", sans-serif; } .ds-stat-label { display: block; color: #9bb0a6; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; } .ds-stat strong { font-family: Fraunces, \"Palatino Linotype\", Palatino, serif; font-size: 1.2rem; font-weight: 550; } .ds-stat .ds-pos { color: #6fbf9a; } .ds-stat .ds-neg { color: #e08a7a; }"
+      "css": ".ds-stat { padding: 0.75rem 0.85rem; border-top: 1px solid rgba(232, 240, 236, 0.12); color: #e8f0ec; font-family: \"Source Sans 3\", \"Segoe UI\", sans-serif; } .ds-stat-label { display: block; color: #9bb0a6; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; } .ds-stat strong { font-family: Fraunces, \"Palatino Linotype\", Palatino, serif; font-size: 1.2rem; font-weight: 550; } .ds-stat .ds-pos { color: #6fbf9a; } .ds-stat .ds-neg { color: #e69584; }"
     },
     {
       "name": "Data Table",

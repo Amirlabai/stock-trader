@@ -1,4 +1,4 @@
-import type { LotSide, PaperPortfolio, PortfolioLot } from '../types/portfolio'
+import type { LotSide, PaperPortfolio, PortfolioLot, PortfolioPosition } from '../types/portfolio'
 import { num, pct, usd } from '../lib/format'
 import { Disclose } from './Disclose'
 
@@ -33,9 +33,21 @@ function journalRows(lots: PortfolioLot[]) {
   return chronological.slice().reverse()
 }
 
+function holdingRows(positions: PortfolioPosition[]) {
+  return positions
+    .map((p) => {
+      // Round to cents so a flat position does not read as a tiny loss.
+      const pnl = Math.round((p.marketValue - p.totalCostBasis) * 100) / 100
+      const ret = p.totalCostBasis > 0 ? pnl / p.totalCostBasis : null
+      return { p, pnl, ret }
+    })
+    .sort((a, b) => b.pnl - a.pnl)
+}
+
 export function PortfolioPanel({ portfolio }: Props) {
   const s = portfolio.summary
   const fills = journalRows(portfolio.lots || [])
+  const holdings = holdingRows(portfolio.positions)
 
   return (
     <Disclose
@@ -104,7 +116,7 @@ export function PortfolioPanel({ portfolio }: Props) {
               <p className="empty">No positions in the ledger yet.</p>
             ) : (
               <div className="table-wrap">
-                <table className="data-table">
+                <table className="data-table holdings-table">
                   <thead>
                     <tr>
                       <th>Ticker</th>
@@ -118,10 +130,7 @@ export function PortfolioPanel({ portfolio }: Props) {
                     </tr>
                   </thead>
                   <tbody>
-                    {portfolio.positions.map((p) => {
-                      // Round to cents so a flat position does not read as a tiny loss.
-                      const pnl = Math.round((p.marketValue - p.totalCostBasis) * 100) / 100
-                      const ret = p.totalCostBasis > 0 ? pnl / p.totalCostBasis : null
+                    {holdings.map(({ p, pnl, ret }) => {
                       const tone = pnl >= 0 ? 'pos' : 'neg'
                       return (
                         <tr key={p.ticker}>
@@ -168,7 +177,7 @@ export function PortfolioPanel({ portfolio }: Props) {
               <p className="empty">No fills recorded yet.</p>
             ) : (
               <div className="table-wrap">
-                <table className="data-table">
+                <table className="data-table journal-table">
                   <thead>
                     <tr>
                       <th>Date</th>
@@ -190,7 +199,7 @@ export function PortfolioPanel({ portfolio }: Props) {
                         <td data-label="Side">{sideLabel(lot.side)}</td>
                         <td data-label="Shares">{num(lot.shares, 4)}</td>
                         <td data-label="Price">{usd(lot.price)}</td>
-                        <td data-label="Cash invested after">{usd(lot.cashInvestedAfter)}</td>
+                        <td data-label="Cash after">{usd(lot.cashInvestedAfter)}</td>
                         <td data-label="Reason">{lot.reason}</td>
                       </tr>
                     ))}

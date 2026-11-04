@@ -18,7 +18,9 @@
 - `pipeline/SCREEN_PARAMETERS.md` documents Tier 1/2 and strategy thresholds
 - Mobile fit: compact horizontal ledger cards under 720px (2–3 metric columns, no page spill), 44px tap targets, safe-area insets, full-width audit drawer
 - Screen calendar: weekday `asOf` only; delayed weekend UTC jobs snap to Friday (no Sat/Sun buy days)
-- Holdings table shows per-position unrealized P&L (market value minus total cost basis), with the P&L cell colored green for a gain and red for a loss (`.pos` / `.neg`); `usd()` now formats negatives as `-$12.34`
+- Holdings table shows per-position unrealized P&L (market value minus total cost basis), with the P&L cell colored green for a gain and red for a loss (`.pos` / `.neg`); `usd()` now formats negatives as `-$12.34`; holdings sorted by P&L, largest gain first
+- Mobile ledger cards tightened: holdings put P&L on the ticker line, transactions put side and date on the ticker line with the reason as a caption; three metric columns from 340px (was 380px)
+- Contrast audit: all text tokens pass WCAG AA on panels; Dusty Coral lifted from `#e08a7a` to `#e69584` so the header error passes 4.5:1 on the brightest canvas wash
 - Universe expanded to ~527 tickers via `pipeline/universe/seed_expansion.csv` (US/UK/EU/APAC/CA)
 
 ## Next
