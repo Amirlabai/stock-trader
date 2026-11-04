@@ -18,6 +18,7 @@
 - `pipeline/SCREEN_PARAMETERS.md` documents Tier 1/2 and strategy thresholds
 - Mobile fit: compact horizontal ledger cards under 720px (2–3 metric columns, no page spill), 44px tap targets, safe-area insets, full-width audit drawer
 - Screen calendar: weekday `asOf` only; delayed weekend UTC jobs snap to Friday (no Sat/Sun buy days)
+- Holdings table shows per-position unrealized P&L (market value minus total cost basis), with the P&L cell colored green for a gain and red for a loss (`.pos` / `.neg`); `usd()` now formats negatives as `-$12.34`
 - Universe expanded to ~527 tickers via `pipeline/universe/seed_expansion.csv` (US/UK/EU/APAC/CA)
 
 ## Next

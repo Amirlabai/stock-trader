@@ -112,25 +112,36 @@ export function PortfolioPanel({ portfolio }: Props) {
                       <th>DCA</th>
                       <th>Price</th>
                       <th>Market value</th>
+                      <th>Unrealized P&amp;L</th>
                       <th>Cash in</th>
                       <th>Dividends</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {portfolio.positions.map((p) => (
-                      <tr key={p.ticker}>
-                        <td data-label="Ticker">
-                          <strong>{p.ticker}</strong>
-                          <span className="sub">{p.name}</span>
-                        </td>
-                        <td data-label="Shares">{num(p.shares, 4)}</td>
-                        <td data-label="DCA">{usd(p.dca)}</td>
-                        <td data-label="Price">{usd(p.currentPrice)}</td>
-                        <td data-label="Market value">{usd(p.marketValue)}</td>
-                        <td data-label="Cash in">{usd(p.cashInvested)}</td>
-                        <td data-label="Dividends">{usd(p.dividendsReceived, 4)}</td>
-                      </tr>
-                    ))}
+                    {portfolio.positions.map((p) => {
+                      // Round to cents so a flat position does not read as a tiny loss.
+                      const pnl = Math.round((p.marketValue - p.totalCostBasis) * 100) / 100
+                      const ret = p.totalCostBasis > 0 ? pnl / p.totalCostBasis : null
+                      const tone = pnl >= 0 ? 'pos' : 'neg'
+                      return (
+                        <tr key={p.ticker}>
+                          <td data-label="Ticker">
+                            <strong>{p.ticker}</strong>
+                            <span className="sub">{p.name}</span>
+                          </td>
+                          <td data-label="Shares">{num(p.shares, 4)}</td>
+                          <td data-label="DCA">{usd(p.dca)}</td>
+                          <td data-label="Price">{usd(p.currentPrice)}</td>
+                          <td data-label="Market value">{usd(p.marketValue)}</td>
+                          <td data-label="Unrealized P&L" className={tone}>
+                            {usd(pnl)}
+                            <span className="sub">{pct(ret)}</span>
+                          </td>
+                          <td data-label="Cash in">{usd(p.cashInvested)}</td>
+                          <td data-label="Dividends">{usd(p.dividendsReceived, 4)}</td>
+                        </tr>
+                      )
+                    })}
                   </tbody>
                 </table>
               </div>

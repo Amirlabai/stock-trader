@@ -10,7 +10,9 @@ export function num(value: number | null | undefined, digits = 2): string {
 
 export function usd(value: number | null | undefined, digits = 2): string {
   if (value == null || Number.isNaN(value)) return '-'
-  return `$${value.toFixed(digits)}`
+  const abs = Math.abs(value).toFixed(digits)
+  const sign = value < 0 && Number(abs) !== 0 ? '-' : ''
+  return `${sign}$${abs}`
 }
 
 export function score(value: number | null | undefined): string {
