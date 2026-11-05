@@ -8,6 +8,12 @@ from typing import Any
 from fetch import StockSnapshot
 from ratios import RatioResult
 
+# Two-stage dividend model (Gordon model with a high-growth first stage).
+REQUIRED_RETURN = 0.09  # k: annual shareholder hurdle used to discount dividends
+HIGH_GROWTH_YEARS = 5  # stage 1: dividends grow at the recent 5-year CAGR
+HIGH_GROWTH_CAP = 0.15  # stage 1 growth is clipped to 0-15%
+TERMINAL_GROWTH = 0.03  # stage 2: long-run growth (about inflation), well below k
+
 
 @dataclass
 class ScoredPick:
@@ -77,6 +83,48 @@ def interest_coverage(snap: StockSnapshot) -> float | None:
     return snap.operating_income / abs(ie)
 
 
+def gordon_margin_of_safety(
+    snap: StockSnapshot, div_cagr: float | None, k: float = REQUIRED_RETURN
+) -> tuple[float | None, float | None]:
+    """Two-stage dividend discount model.
+
+    Stage 1: dividends grow at the recent CAGR (clipped to 0-15%) for
+    HIGH_GROWTH_YEARS, each discounted at k. Stage 2: the Gordon model,
+    P = D(n+1) / (k - g_terminal), discounted back n years.
+
+    Works in units of price (D0 / price = yield), so the result is unit-free
+    and listing-currency quirks cancel. Returns (fair value in local currency,
+    margin of safety as fair / price - 1).
+    """
+    yld = snap.dividend_yield
+    if yld is None or yld <= 0 or div_cagr is None:
+        return None, None
+    g1 = max(0.0, min(div_cagr, HIGH_GROWTH_CAP))
+    n = HIGH_GROWTH_YEARS
+    ratio = 0.0
+    d = yld
+    for t in range(1, n + 1):
+        d *= 1.0 + g1
+        ratio += d / (1.0 + k) ** t
+    terminal = d * (1.0 + TERMINAL_GROWTH) / (k - TERMINAL_GROWTH)
+    ratio += terminal / (1.0 + k) ** n
+    fair = snap.price * ratio if snap.price else None
+    return fair, ratio - 1.0
+
+
+def peg(snap: StockSnapshot) -> float | None:
+    """PEG = (P/E) / g, with g as forward EPS growth in percent; Yahoo's PEG as fallback."""
+    pe = snap.trailing_pe
+    g = snap.forward_eps_growth
+    if pe is not None and g is not None and g > 0:
+        return pe / (g * 100.0)
+    return snap.peg_ratio
+
+
+def valuation_metrics(snap: StockSnapshot) -> dict[str, Any]:
+    return {"pe": snap.trailing_pe, "peg": peg(snap), "pb": snap.price_to_book}
+
+
 def evaluate_dividend(snap: StockSnapshot, ratios: RatioResult) -> ScoredPick | None:
     if snap.price_usd is None or snap.price_usd <= 0:
         return None
@@ -103,6 +151,10 @@ def evaluate_dividend(snap: StockSnapshot, ratios: RatioResult) -> ScoredPick | 
         score += max(0.0, 10.0 - abs(payout - 0.45) * 30)
     if ratios.debt_to_mc is not None:
         score += max(0.0, (0.33 - ratios.debt_to_mc) / 0.33 * 10)
+    fair, mos = gordon_margin_of_safety(snap, div_cagr)
+    if mos is not None:
+        # +10 at 30% or more below fair value, -10 at 30% or more above it
+        score += max(-10.0, min(10.0, mos / 0.30 * 10))
     score = float(max(0.0, min(100.0, score)))
 
     return ScoredPick(
@@ -115,6 +167,9 @@ def evaluate_dividend(snap: StockSnapshot, ratios: RatioResult) -> ScoredPick | 
             "divCagr5y": div_cagr,
             "fcfPayout": payout,
             "interestCoverage": cov,
+            "gordonFairValue": fair,
+            "marginOfSafety": mos,
+            **valuation_metrics(snap),
         },
     )
 
@@ -166,6 +221,10 @@ def evaluate_growth(snap: StockSnapshot, ratios: RatioResult) -> ScoredPick | No
     score += min(5.0, rel_3m * 20)
     if ratios.debt_to_mc is not None:
         score += max(0.0, (0.33 - ratios.debt_to_mc) / 0.33 * 5)
+    peg_v = peg(snap)
+    if peg_v is not None:
+        # +10 at PEG 0, 0 at PEG 2, down to -10 at PEG 4 or above
+        score += max(-10.0, min(10.0, (2.0 - peg_v) * 5))
     score = float(max(0.0, min(100.0, score)))
 
     return ScoredPick(
@@ -179,5 +238,6 @@ def evaluate_growth(snap: StockSnapshot, ratios: RatioResult) -> ScoredPick | No
             "debtToMc": ratios.debt_to_mc,
             "roic": roic,
             "rel3m": rel_3m,
+            **valuation_metrics(snap),
         },
     )

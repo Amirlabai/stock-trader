@@ -147,6 +147,9 @@ function App() {
           sector={audit.pick.sector}
           region={audit.pick.region}
           ratios={audit.pick.ratios}
+          price={audit.pick.price}
+          valuation={audit.pick}
+          showGordon={audit.track === 'dividend'}
           onClose={() => setAudit(null)}
         />
       )}

@@ -34,6 +34,10 @@ def trading_as_of(day: date | None = None) -> date:
     return d
 
 
+def valuation_dict(p) -> dict:
+    return {"pe": p.metrics.get("pe"), "peg": p.metrics.get("peg"), "pb": p.metrics.get("pb")}
+
+
 def pick_to_dividend(p) -> dict:
     s = p.snap
     r = p.ratios
@@ -48,6 +52,9 @@ def pick_to_dividend(p) -> dict:
         "yield": p.metrics["yield"],
         "divCagr5y": p.metrics.get("divCagr5y"),
         "fcfPayout": p.metrics.get("fcfPayout"),
+        "gordonFairValue": p.metrics.get("gordonFairValue"),
+        "marginOfSafety": p.metrics.get("marginOfSafety"),
+        **valuation_dict(p),
         "score": round(p.score, 1),
         "purificationPerShare": r.purification_per_share,
         "ratios": ratios_dict(r),
@@ -68,6 +75,7 @@ def pick_to_growth(p) -> dict:
         "revGrowthTtm": p.metrics.get("revGrowthTtm"),
         "fwdEpsGrowth": p.metrics.get("fwdEpsGrowth"),
         "debtToMc": p.metrics.get("debtToMc"),
+        **valuation_dict(p),
         "score": round(p.score, 1),
         "purificationPerShare": r.purification_per_share,
         "ratios": ratios_dict(r),

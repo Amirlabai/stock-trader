@@ -14,6 +14,7 @@ Static daily dashboard for Shariah-compliant (AAOIFI-style) equity picks, split 
 - Debt / Cash / Receivables screens: each under 33% of trailing market cap (24-month average when available).
 - Dividend track: yield about 2.5–7.5%, payout 25–70%, multi-year dividend growth, interest coverage above 3.5x.
 - Growth track: revenue/EPS growth and ROIC thresholds; price above 200-day SMA.
+- Valuation (score only, never a gate): growth score adds a PEG term (P/E / forward EPS growth %); dividend score adds a margin of safety from a two-stage dividend model (5 years at the 5-year dividend CAGR, clipped to 0–15%, then Gordon at 3% growth; k = 9%). P/E and P/B are informational. Shown in the audit drawer.
 - Daily output: top 5 dividend + top 5 growth.
 - Paper buy size: USD 100 per pick lot; DCA = total cost basis / shares; cash invested excludes DRIP cash.
 - Repeat buy: if a ticker was bought yesterday, it is bought again today whenever it is still on that day's unique pick list (price present and greater than 0). `lastBuyAsOf` only prevents applying the same date twice.

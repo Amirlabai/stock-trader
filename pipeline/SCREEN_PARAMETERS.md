@@ -62,7 +62,7 @@ Purification estimate (informational, not a gate): `|interest income| / shares o
 | Interest coverage | Operating income / interest expense `> 3.5x` (treated as pass if expense is zero and operating income is positive) |
 | Operating cash flow | Positive in each of the last 3 fiscal years |
 
-Composite score (0–100): base 50, plus yield, 5-year dividend CAGR, payout near 45%, and lower debt-to-market-cap.
+Composite score (0–100): base 50, plus yield, 5-year dividend CAGR, payout near 45%, lower debt-to-market-cap, and the Gordon margin of safety (see Valuation).
 
 ## Strategy B: Growth
 
@@ -75,7 +75,20 @@ Composite score (0–100): base 50, plus yield, 5-year dividend CAGR, payout nea
 | Price vs 200-day SMA | Price `>=` SMA |
 | 3-month relative strength | Price / price 3 months ago `- 1 > 0` |
 
-Composite score (0–100): base 50, plus YoY growth, revenue CAGR, forward EPS growth, ROIC, 3-month relative strength, and lower debt-to-market-cap.
+Composite score (0–100): base 50, plus YoY growth, revenue CAGR, forward EPS growth, ROIC, 3-month relative strength, lower debt-to-market-cap, and PEG (see Valuation).
+
+## Valuation
+
+Valuation adjusts the composite score only. It never excludes a name, and a missing figure adds nothing (no fail-closed rule here).
+
+| Measure | Formula | Score effect |
+|---|---|---|
+| P/E (trailing) | Price / trailing EPS | Informational |
+| P/B | Market value / book equity | Informational |
+| PEG (growth track) | P/E / (forward EPS growth in percent); Yahoo PEG if not computable | `(2 - PEG) x 5`, clamped to `-10` to `+10` |
+| Two-stage dividend fair value (dividend track) | Stage 1: dividends grow at the 5-year dividend CAGR (clipped to `0%` to `15%`) for 5 years. Stage 2: Gordon model, next dividend / (k - 3%). All discounted at `k = 9%` | Margin of safety / 30% x 10, clamped to `-10` to `+10` |
+
+Margin of safety is fair value / price `- 1`. It is computed from the dividend yield, so listing-currency units cancel. The Gordon model alone breaks down when recent dividend growth is at or above k; the two-stage form lets fast growers keep their pace for 5 years, then slow to a long-run rate. Constants in `strategies.py`: `REQUIRED_RETURN = 0.09`, `HIGH_GROWTH_YEARS = 5`, `HIGH_GROWTH_CAP = 0.15`, `TERMINAL_GROWTH = 0.03`.
 
 ## Universe
 

@@ -7,7 +7,18 @@ export interface AaoifiRatios {
   purificationPerShare: number | null;
 }
 
-export interface DividendPick {
+/** Valuation multiples. Informational; null when Yahoo has no usable figure. */
+export interface Valuation {
+  pe?: number | null;
+  peg?: number | null;
+  pb?: number | null;
+  /** Gordon model fair value in the listing currency (dividend track only). */
+  gordonFairValue?: number | null;
+  /** Gordon fair value / price - 1 (dividend track only). */
+  marginOfSafety?: number | null;
+}
+
+export interface DividendPick extends Valuation {
   ticker: string;
   name: string;
   sector: string;
@@ -23,7 +34,7 @@ export interface DividendPick {
   ratios: AaoifiRatios;
 }
 
-export interface GrowthPick {
+export interface GrowthPick extends Valuation {
   ticker: string;
   name: string;
   sector: string;

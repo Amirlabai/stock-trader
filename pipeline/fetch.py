@@ -61,6 +61,12 @@ class StockSnapshot:
     sma_200: float | None = None
     price_3m_ago: float | None = None
     shares_outstanding: float | None = None
+    # Valuation (informational inputs for PEG and Gordon scoring)
+    trailing_eps: float | None = None
+    trailing_pe: float | None = None
+    forward_pe: float | None = None
+    peg_ratio: float | None = None  # Yahoo's figure; fallback only
+    price_to_book: float | None = None
     haram_revenue_pct: float | None = None
     raw_info: dict[str, Any] = field(default_factory=dict)
 
@@ -73,6 +79,18 @@ def _safe_float(value: Any) -> float | None:
     except (TypeError, ValueError):
         return None
     if np.isnan(f) or np.isinf(f):
+        return None
+    return f
+
+
+# Yahoo quotes these in a subunit (pence, cents, agorot) while EPS may be in the main unit
+_SUBUNIT_CURRENCIES = frozenset({"GBp", "GBX", "ZAc", "ILA"})
+
+
+def _positive_or_none(value: Any, cap: float) -> float | None:
+    """Valuation multiples: keep only positive values below a sanity cap."""
+    f = _safe_float(value)
+    if f is None or f <= 0 or f >= cap:
         return None
     return f
 
@@ -254,6 +272,21 @@ def fetch_snapshot(ticker: str, region: str, display_name: str, sleep_s: float =
             snap.forward_eps_growth = max(-0.99, min(g, 5.0))
         else:
             snap.forward_eps_growth = None
+
+        snap.trailing_eps = trail_eps
+        snap.trailing_pe = _positive_or_none(info.get("trailingPE"), 1000.0)
+        # Price and EPS share a unit only outside subunit quotes (GBp, ZAc, ILA)
+        if (
+            snap.trailing_pe is None
+            and trail_eps is not None
+            and trail_eps > 0
+            and price_local
+            and currency not in _SUBUNIT_CURRENCIES
+        ):
+            snap.trailing_pe = _positive_or_none(price_local / trail_eps, 1000.0)
+        snap.forward_pe = _positive_or_none(info.get("forwardPE"), 1000.0)
+        snap.peg_ratio = _positive_or_none(info.get("trailingPegRatio") or info.get("pegRatio"), 50.0)
+        snap.price_to_book = _positive_or_none(info.get("priceToBook"), 100.0)
 
         if snap.dividend_yield is not None and snap.dividend_yield > 1:
             snap.dividend_yield = snap.dividend_yield / 100.0
