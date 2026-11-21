@@ -3,26 +3,26 @@
   "buyAmountUsd": 100.0,
   "summary": {
     "cashInvested": 52400.0,
-    "dividendsReinvested": 106.894554,
-    "totalCostBasis": 52506.8946,
-    "currentValue": 48770.1388,
-    "unrealizedPnl": -3736.7558,
-    "returnPct": -0.07116695,
+    "dividendsReinvested": 108.545356,
+    "totalCostBasis": 52508.5454,
+    "currentValue": 46930.5682,
+    "unrealizedPnl": -5577.9772,
+    "returnPct": -0.10622989,
     "positionCount": 33,
-    "dividendEventCount": 75
+    "dividendEventCount": 77
   },
   "positions": [
     {
       "ticker": "2330.TW",
       "name": "Taiwan Semiconductor",
-      "shares": 11.49333221,
+      "shares": 11.51642667,
       "cashInvested": 800.0,
-      "dividendsReinvested": 68.594662,
-      "totalCostBasis": 868.5947,
-      "dca": 75.5738,
-      "currentPrice": 60.5096,
-      "marketValue": 695.4564,
-      "dividendsReceived": 68.594662,
+      "dividendsReinvested": 69.993211,
+      "totalCostBasis": 869.9932,
+      "dca": 75.5437,
+      "currentPrice": 60.5578,
+      "marketValue": 697.4095,
+      "dividendsReceived": 69.993211,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-10-21"
     },
@@ -34,8 +34,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 100.0,
       "dca": 269.16,
-      "currentPrice": 243.45,
-      "marketValue": 90.4481,
+      "currentPrice": 244.48,
+      "marketValue": 90.8307,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-11-06",
       "lastBuyAsOf": "2026-11-06"
@@ -48,8 +48,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 3500.0,
       "dca": 197.636,
-      "currentPrice": 193.94,
-      "marketValue": 3434.546,
+      "currentPrice": 167.62,
+      "marketValue": 2968.4365,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-11-20"
@@ -62,8 +62,8 @@
       "dividendsReinvested": 0.689042,
       "totalCostBasis": 1700.689,
       "dca": 91.91,
-      "currentPrice": 75.61,
-      "marketValue": 1399.0763,
+      "currentPrice": 69.72,
+      "marketValue": 1290.0886,
       "dividendsReceived": 0.689042,
       "firstBuyAsOf": "2026-09-01",
       "lastBuyAsOf": "2026-10-16"
@@ -76,8 +76,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 100.0,
       "dca": 1590.9,
-      "currentPrice": 1356.2,
-      "marketValue": 85.2473,
+      "currentPrice": 1266.22,
+      "marketValue": 79.5914,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-10-27",
       "lastBuyAsOf": "2026-10-27"
@@ -85,14 +85,14 @@
     {
       "ticker": "ASML.AS",
       "name": "ASML Holding",
-      "shares": 0.12553298,
+      "shares": 0.12572986,
       "cashInvested": 200.0,
-      "dividendsReinvested": 4.863208,
-      "totalCostBasis": 204.8632,
-      "dca": 1631.9473,
-      "currentPrice": 1383.518,
-      "marketValue": 173.6771,
-      "dividendsReceived": 4.863208,
+      "dividendsReinvested": 5.115461,
+      "totalCostBasis": 205.1155,
+      "dca": 1631.3981,
+      "currentPrice": 1413.1197,
+      "marketValue": 177.6713,
+      "dividendsReceived": 5.115461,
       "firstBuyAsOf": "2026-10-22",
       "lastBuyAsOf": "2026-10-26"
     },
@@ -104,8 +104,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 800.0,
       "dca": 6.1037,
-      "currentPrice": 7.3366,
-      "marketValue": 961.6022,
+      "currentPrice": 7.2577,
+      "marketValue": 951.2638,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-09-29",
       "lastBuyAsOf": "2026-10-09"
@@ -118,8 +118,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 200.0,
       "dca": 334.0671,
-      "currentPrice": 304.88,
-      "marketValue": 182.5262,
+      "currentPrice": 281.58,
+      "marketValue": 168.5769,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-11-10",
       "lastBuyAsOf": "2026-11-11"
@@ -132,8 +132,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 900.0,
       "dca": 2383.5361,
-      "currentPrice": 2218.5479,
-      "marketValue": 837.7021,
+      "currentPrice": 2158.469,
+      "marketValue": 815.0169,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-11-05",
       "lastBuyAsOf": "2026-11-20"
@@ -146,8 +146,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 200.0,
       "dca": 85.674,
-      "currentPrice": 84.5072,
-      "marketValue": 197.2762,
+      "currentPrice": 84.4729,
+      "marketValue": 197.1962,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-11-06",
       "lastBuyAsOf": "2026-11-20"
@@ -160,8 +160,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 2800.0,
       "dca": 169.273,
-      "currentPrice": 198.3979,
-      "marketValue": 3281.7641,
+      "currentPrice": 193.9447,
+      "marketValue": 3208.1027,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-09-03",
       "lastBuyAsOf": "2026-10-23"
@@ -174,8 +174,8 @@
       "dividendsReinvested": 4.206468,
       "totalCostBasis": 704.2065,
       "dca": 196.2731,
-      "currentPrice": 174.32,
-      "marketValue": 625.441,
+      "currentPrice": 175.75,
+      "marketValue": 630.5717,
       "dividendsReceived": 4.206468,
       "firstBuyAsOf": "2026-09-15",
       "lastBuyAsOf": "2026-11-12"
@@ -188,8 +188,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 600.0,
       "dca": 530.1107,
-      "currentPrice": 513.1254,
-      "marketValue": 580.7754,
+      "currentPrice": 513.2156,
+      "marketValue": 580.8775,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-11-04",
       "lastBuyAsOf": "2026-11-20"
@@ -202,8 +202,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 200.0,
       "dca": 158.8033,
-      "currentPrice": 193.7891,
-      "marketValue": 244.0618,
+      "currentPrice": 191.8056,
+      "marketValue": 241.5638,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-10-15",
       "lastBuyAsOf": "2026-10-16"
@@ -216,8 +216,8 @@
       "dividendsReinvested": 10.235831,
       "totalCostBasis": 1610.2358,
       "dca": 171.3299,
-      "currentPrice": 174.05,
-      "marketValue": 1635.8008,
+      "currentPrice": 175.48,
+      "marketValue": 1649.2405,
       "dividendsReceived": 10.235831,
       "firstBuyAsOf": "2026-10-27",
       "lastBuyAsOf": "2026-11-20"
@@ -230,8 +230,8 @@
       "dividendsReinvested": 5.160384,
       "totalCostBasis": 4205.1604,
       "dca": 1257.7707,
-      "currentPrice": 1351.12,
-      "marketValue": 4517.2592,
+      "currentPrice": 1347.11,
+      "marketValue": 4503.8523,
       "dividendsReceived": 5.160384,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-11-20"
@@ -244,8 +244,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 5100.0,
       "dca": 459.5498,
-      "currentPrice": 425.8751,
-      "marketValue": 4726.284,
+      "currentPrice": 429.9035,
+      "marketValue": 4770.9898,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-11-20"
@@ -258,8 +258,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 2400.0,
       "dca": 1909.2805,
-      "currentPrice": 1355.49,
-      "marketValue": 1703.8753,
+      "currentPrice": 1355.0,
+      "marketValue": 1703.2594,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-10-22"
@@ -272,8 +272,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 100.0,
       "dca": 715.62,
-      "currentPrice": 616.38,
-      "marketValue": 86.1323,
+      "currentPrice": 560.84,
+      "marketValue": 78.3712,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-09-29",
       "lastBuyAsOf": "2026-09-29"
@@ -286,8 +286,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 4500.0,
       "dca": 49.649,
-      "currentPrice": 45.2101,
-      "marketValue": 4097.6745,
+      "currentPrice": 45.1953,
+      "marketValue": 4096.3261,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-09-01",
       "lastBuyAsOf": "2026-11-20"
@@ -300,8 +300,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 600.0,
       "dca": 1391.5593,
-      "currentPrice": 1295.86,
-      "marketValue": 558.7372,
+      "currentPrice": 1142.05,
+      "marketValue": 492.4188,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-09-30",
       "lastBuyAsOf": "2026-11-13"
@@ -314,8 +314,8 @@
       "dividendsReinvested": 0.35441,
       "totalCostBasis": 3300.3544,
       "dca": 987.1247,
-      "currentPrice": 690.44,
-      "marketValue": 2308.4182,
+      "currentPrice": 594.51,
+      "marketValue": 1987.6857,
       "dividendsReceived": 0.35441,
       "firstBuyAsOf": "2026-09-01",
       "lastBuyAsOf": "2026-10-30"
@@ -328,8 +328,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 500.0,
       "dca": 157.9757,
-      "currentPrice": 150.8798,
-      "marketValue": 477.5414,
+      "currentPrice": 150.7404,
+      "marketValue": 477.1002,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-08-28"
@@ -342,8 +342,8 @@
       "dividendsReinvested": 0.78209,
       "totalCostBasis": 3600.7821,
       "dca": 223.2751,
-      "currentPrice": 145.98,
-      "marketValue": 2354.2358,
+      "currentPrice": 125.53,
+      "marketValue": 2024.4364,
       "dividendsReceived": 0.78209,
       "firstBuyAsOf": "2026-08-25",
       "lastBuyAsOf": "2026-10-30"
@@ -356,8 +356,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 300.0,
       "dca": 349.1912,
-      "currentPrice": 339.92,
-      "marketValue": 292.0349,
+      "currentPrice": 343.32,
+      "marketValue": 294.9559,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-08-27"
@@ -370,8 +370,8 @@
       "dividendsReinvested": 3.75638,
       "totalCostBasis": 503.7564,
       "dca": 145.0546,
-      "currentPrice": 167.85,
-      "marketValue": 582.922,
+      "currentPrice": 169.37,
+      "marketValue": 588.2007,
       "dividendsReceived": 3.75638,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-10-23"
@@ -384,8 +384,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 3800.0,
       "dca": 186.7532,
-      "currentPrice": 156.67,
-      "marketValue": 3187.8758,
+      "currentPrice": 143.49,
+      "marketValue": 2919.6931,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-09-01",
       "lastBuyAsOf": "2026-11-04"
@@ -398,8 +398,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 500.0,
       "dca": 91.3496,
-      "currentPrice": 94.645,
-      "marketValue": 518.0371,
+      "currentPrice": 91.9153,
+      "marketValue": 503.0962,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-08-28"
@@ -412,8 +412,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 200.0,
       "dca": 45.3313,
-      "currentPrice": 48.1071,
-      "marketValue": 212.2465,
+      "currentPrice": 48.0693,
+      "marketValue": 212.0799,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-10-15",
       "lastBuyAsOf": "2026-10-16"
@@ -426,8 +426,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 800.0,
       "dca": 460.4924,
-      "currentPrice": 430.91,
-      "marketValue": 748.6074,
+      "currentPrice": 396.17,
+      "marketValue": 688.2546,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-11-03",
       "lastBuyAsOf": "2026-11-17"
@@ -440,8 +440,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 3800.0,
       "dca": 88.0706,
-      "currentPrice": 93.9976,
-      "marketValue": 4055.7345,
+      "currentPrice": 94.6907,
+      "marketValue": 4085.6384,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-09-01",
       "lastBuyAsOf": "2026-11-20"
@@ -454,8 +454,8 @@
       "dividendsReinvested": 0.0,
       "totalCostBasis": 1500.0,
       "dca": 30.4643,
-      "currentPrice": 29.3887,
-      "marketValue": 1447.0378,
+      "currentPrice": 29.9396,
+      "marketValue": 1474.1634,
       "dividendsReceived": 0.0,
       "firstBuyAsOf": "2026-10-28",
       "lastBuyAsOf": "2026-11-20"
@@ -468,8 +468,8 @@
       "dividendsReinvested": 8.252079,
       "totalCostBasis": 2308.2521,
       "dca": 79.9637,
-      "currentPrice": 85.57,
-      "marketValue": 2470.0839,
+      "currentPrice": 79.11,
+      "marketValue": 2283.6081,
       "dividendsReceived": 8.252079,
       "firstBuyAsOf": "2026-08-22",
       "lastBuyAsOf": "2026-11-19"
@@ -8861,6 +8861,34 @@
       "side": "buy",
       "reason": "Dividend reinvestment",
       "cashInvestedAfter": 52400.0
+    },
+    {
+      "asOf": "2026-09-16",
+      "ticker": "2330.TW",
+      "name": "Taiwan Semiconductor",
+      "source": "drip",
+      "shares": 0.023094456330466483,
+      "price": 60.55780127644539,
+      "costUsd": 1.3985494970479355,
+      "track": null,
+      "currency": "USD",
+      "side": "buy",
+      "reason": "Dividend reinvestment",
+      "cashInvestedAfter": 52400.0
+    },
+    {
+      "asOf": "2026-10-26",
+      "ticker": "ASML.AS",
+      "name": "ASML Holding",
+      "source": "drip",
+      "shares": 0.0001968783788106049,
+      "price": 1281.2637004852295,
+      "costUsd": 0.2522531201804084,
+      "track": null,
+      "currency": "USD",
+      "side": "buy",
+      "reason": "Dividend reinvestment",
+      "cashInvestedAfter": 52400.0
     }
   ],
   "dividendEvents": [
@@ -9306,6 +9334,15 @@
       "sharesBought": 0.021994720314729987
     },
     {
+      "asOf": "2026-09-16",
+      "ticker": "2330.TW",
+      "amountPerShare": 0.2119523347464595,
+      "sharesHeld": 6.598415151788259,
+      "cash": 1.3985494970479355,
+      "reinvestPrice": 60.55780127644539,
+      "sharesBought": 0.023094456330466483
+    },
+    {
       "asOf": "2026-09-22",
       "ticker": "APH",
       "amountPerShare": 0.125,
@@ -9504,6 +9541,15 @@
       "sharesBought": 0.0001785079608500198
     },
     {
+      "asOf": "2026-10-26",
+      "ticker": "ASML.AS",
+      "amountPerShare": 2.0623080110549927,
+      "sharesHeld": 0.1223159289631843,
+      "cash": 0.2522531201804084,
+      "reinvestPrice": 1281.2637004852295,
+      "sharesBought": 0.0001968783788106049
+    },
+    {
       "asOf": "2026-10-30",
       "ticker": "ZTS",
       "amountPerShare": 0.53,
@@ -9541,6 +9587,6 @@
     }
   ],
   "lastBuyAsOf": "2026-11-20",
-  "lastDividendCheckAsOf": "2026-11-20",
-  "generatedAt": "2026-11-20T03:05:58.613875+00:00"
+  "lastDividendCheckAsOf": "2026-11-21",
+  "generatedAt": "2026-11-21T03:15:24.971763+00:00"
 }
